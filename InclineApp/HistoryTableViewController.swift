@@ -6,6 +6,7 @@
 //  Copyright © 2016 Incline. All rights reserved.
 //
 
+// Do not use this class, it is obsolete.
 import UIKit
 
 class HistoryTableViewController: UITableViewController {

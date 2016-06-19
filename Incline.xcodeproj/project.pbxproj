@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3708FD619B8F60D95C7F6907 /* libPods-InclineTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C016DFB7431646E136CE3694 /* libPods-InclineTests.a */; };
 		705BE4001D03387000172EC5 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BE3FF1D03387000172EC5 /* HistoryTableViewController.swift */; };
 		705BE4021D038CF300172EC5 /* CardioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BE4011D038CF300172EC5 /* CardioTableViewController.swift */; };
 		70F4467A1CFE891B00203756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F446791CFE891B00203756 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		70F4473E1CFF636700203756 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4473C1CFF636700203756 /* AccountTableViewController.swift */; };
 		70F4473F1CFF636700203756 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4473D1CFF636700203756 /* EntryTableViewController.swift */; };
 		70F447411CFF652A00203756 /* BodyCompTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F447401CFF652A00203756 /* BodyCompTableViewController.swift */; };
+		9EE9D8B37CAF0C8CC53689A9 /* libPods-Incline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 175AB02FDBD436D300BC314C /* libPods-Incline.a */; };
 		CFC159CCA546238F16C0EFCE /* ReuseableHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15B62325030A5CAA07EC9 /* ReuseableHistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig"; sourceTree = "<group>"; };
+		175AB02FDBD436D300BC314C /* libPods-Incline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Incline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		705BE3FF1D03387000172EC5 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		705BE4011D038CF300172EC5 /* CardioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTableViewController.swift; sourceTree = "<group>"; };
 		70F446761CFE891B00203756 /* Incline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Incline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,11 @@
 		70F4473C1CFF636700203756 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		70F4473D1CFF636700203756 /* EntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 		70F447401CFF652A00203756 /* BodyCompTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCompTableViewController.swift; sourceTree = "<group>"; };
+		7F7666C02EA890B5043FA8DE /* Pods-InclineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		97F6EE151D165A9900F1BAE2 /* Incline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Incline-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1709AEC99C3E5EBA8D05282 /* Pods-Incline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig"; sourceTree = "<group>"; };
+		B547DD499DD365C80E784BB7 /* Pods-Incline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig"; sourceTree = "<group>"; };
+		C016DFB7431646E136CE3694 /* libPods-InclineTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InclineTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC15B62325030A5CAA07EC9 /* ReuseableHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableHistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE9D8B37CAF0C8CC53689A9 /* libPods-Incline.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3708FD619B8F60D95C7F6907 /* libPods-InclineTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +141,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3E0CD5320CC136736C6AEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B547DD499DD365C80E784BB7 /* Pods-Incline.debug.xcconfig */,
+				A1709AEC99C3E5EBA8D05282 /* Pods-Incline.release.xcconfig */,
+				7F7666C02EA890B5043FA8DE /* Pods-InclineTests.debug.xcconfig */,
+				0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		70F4466D1CFE891B00203756 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,9 @@
 				70F4468F1CFE891B00203756 /* InclineAppTests */,
 				70F4469A1CFE891B00203756 /* InclineAppUITests */,
 				70F446771CFE891B00203756 /* Products */,
+				0F3E0CD5320CC136736C6AEF /* Pods */,
+				9559594246BECD414A54BEF9 /* Frameworks */,
+				97F6EE151D165A9900F1BAE2 /* Incline-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +242,15 @@
 			name = "System Icons";
 			sourceTree = "<group>";
 		};
+		9559594246BECD414A54BEF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				175AB02FDBD436D300BC314C /* libPods-Incline.a */,
+				C016DFB7431646E136CE3694 /* libPods-InclineTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70F446A01CFE891B00203756 /* Build configuration list for PBXNativeTarget "Incline" */;
 			buildPhases = (
+				4B16FC41B655A0D556937078 /* [CP] Check Pods Manifest.lock */,
 				70F446721CFE891B00203756 /* Sources */,
 				70F446731CFE891B00203756 /* Frameworks */,
 				70F446741CFE891B00203756 /* Resources */,
+				4952F51A7E8C307D6A6732D6 /* [CP] Embed Pods Frameworks */,
+				223133C0C296596F5FDC523A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70F446A31CFE891B00203756 /* Build configuration list for PBXNativeTarget "InclineTests" */;
 			buildPhases = (
+				2BDD807853C0F95AC262BDAC /* [CP] Check Pods Manifest.lock */,
 				70F446881CFE891B00203756 /* Sources */,
 				70F446891CFE891B00203756 /* Frameworks */,
 				70F4468A1CFE891B00203756 /* Resources */,
+				E4A328C26FF9DD213CACDB09 /* [CP] Embed Pods Frameworks */,
+				281CAF4AB3F4F85E5F8C9FFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,6 +405,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		223133C0C296596F5FDC523A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Incline/Pods-Incline-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		281CAF4AB3F4F85E5F8C9FFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BDD807853C0F95AC262BDAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4952F51A7E8C307D6A6732D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Incline/Pods-Incline-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B16FC41B655A0D556937078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A328C26FF9DD213CACDB09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		70F446721CFE891B00203756 /* Sources */ = {
@@ -518,30 +651,38 @@
 		};
 		70F446A11CFE891B00203756 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B547DD499DD365C80E784BB7 /* Pods-Incline.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = incline.InclineApp;
 				PRODUCT_NAME = Incline;
+				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		70F446A21CFE891B00203756 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1709AEC99C3E5EBA8D05282 /* Pods-Incline.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = incline.InclineApp;
 				PRODUCT_NAME = Incline;
+				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		70F446A41CFE891B00203756 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F7666C02EA890B5043FA8DE /* Pods-InclineTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "InclineApp(2ndIteration)Tests/Info.plist";
@@ -554,6 +695,7 @@
 		};
 		70F446A51CFE891B00203756 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "InclineApp(2ndIteration)Tests/Info.plist";
