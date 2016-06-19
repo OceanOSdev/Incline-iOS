@@ -28,7 +28,7 @@
         <!--Entry-->
         <scene sceneID="0ON-vK-p7C">
             <objects>
-                <tableViewController title="Entry" id="Ex8-P5-qQ4" sceneMemberID="viewController">
+                <tableViewController title="Entry" id="Ex8-P5-qQ4" customClass="EntryTableViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zln-6I-s82">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Yb-0F-Fsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="715"/>
+            <point key="canvasLocation" x="1564" y="733"/>
         </scene>
         <!--Account-->
         <scene sceneID="YIT-tS-ni0">
@@ -1810,8 +1810,8 @@
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="42L-Wb-kba"/>
         <segue reference="eca-Ze-Vef"/>
+        <segue reference="42L-Wb-kba"/>
         <segue reference="akP-6E-JJW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>

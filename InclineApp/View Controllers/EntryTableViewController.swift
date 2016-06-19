@@ -12,6 +12,16 @@ class EntryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        WebApiConnector.getToken(false, parent: self) {
+            (result: String?, error: NSError?) -> Void in
+            if result != nil {
+                print(result)
+            }
+            else {
+
+            }
+        }
 	
     }
 
@@ -23,13 +33,11 @@ class EntryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
 }

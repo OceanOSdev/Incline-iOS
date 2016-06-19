@@ -6,7 +6,7 @@
 import Foundation
 
 class WebApiConnector {
-    static var authContext: ADAuthenticationContext = ADAuthenticationContext()
+    static var authContext: ADAuthenticationContext? = nil
 
     static func getToken(clearCache: Bool, parent: UIViewController, completionHandler: (result: String?, error: NSError?) -> Void)
     {
@@ -17,9 +17,9 @@ class WebApiConnector {
         // Auth logic
         var er : ADAuthenticationError? = nil
         authContext = ADAuthenticationContext(authority: ApplicationData.authorityURL, error: &er)
-        authContext.parentController = parent
+        authContext?.parentController = parent
 
-        authContext.acquireTokenWithResource(ApplicationData.resourceID, clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+        authContext?.acquireTokenWithResource(ApplicationData.resourceID, clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
             (result: ADAuthenticationResult!) -> Void in
             if (result.accessToken != nil) {
                 ApplicationData.userItem.accessToken = result.accessToken
