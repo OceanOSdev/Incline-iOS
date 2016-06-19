@@ -468,7 +468,7 @@
         <!--History-->
         <scene sceneID="uHx-JS-d8O">
             <objects>
-                <tableViewController id="ZQo-M1-bRG" customClass="HistoryTableViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ZQo-M1-bRG" customClass="ReuseableHistoryTableViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9X-vT-Z7S">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -500,7 +500,7 @@
                     <navigationItem key="navigationItem" title="History" id="YU6-BU-i6Z">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="QsX-pi-gIG">
                             <connections>
-                                <action selector="btnExit:" destination="ZQo-M1-bRG" id="pfJ-dZ-pje"/>
+                                <action selector="btnExit:" destination="ZQo-M1-bRG" id="xA1-i5-ZgU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1810,9 +1810,9 @@
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eca-Ze-Vef"/>
         <segue reference="42L-Wb-kba"/>
-        <segue reference="xtv-KR-Cfb"/>
+        <segue reference="eca-Ze-Vef"/>
+        <segue reference="akP-6E-JJW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

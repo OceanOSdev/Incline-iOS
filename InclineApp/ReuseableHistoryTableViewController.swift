@@ -7,6 +7,10 @@ import UIKit
 
 class ReuseableHistoryTableViewController: UITableViewController {
 
+    @IBAction func btnExit(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     var totalValuesDest: [String] = []
 
     override func viewDidLoad() {

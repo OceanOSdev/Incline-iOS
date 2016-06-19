@@ -304,7 +304,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        let tableVC = navVC.viewControllers.first as! HistoryTableViewController
+        /*let tableVC = navVC.viewControllers.first as! HistoryTableViewController
         
         if segue.identifier == "showHeightHistory" {
             tableVC.totalHeightValuesDest = totalHeightValues
@@ -316,7 +316,23 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         else if segue.identifier == "showBodyFatHistory" {
             
             tableVC.totalBodyFatValuesDest = totalBodyFatValues
+        }*/
+        
+        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        
+        var arrayToPass: [String] = []
+        switch segue.identifier! {
+        case "showHeightHistory":
+            arrayToPass = totalHeightValues.map({"\(($0 / 12)) ft \(($0 % 12)) in"})
+        case "showWeightHistory":
+            arrayToPass = totalWeightValues.map({"\($0) lbs"})
+        case "showBodyFatHistory":
+            arrayToPass = totalBodyFatValues.map({"\($0) %"})
+        default:
+            arrayToPass = []
         }
+        
+        tableVC.totalValuesDest = arrayToPass
 
         
     }
