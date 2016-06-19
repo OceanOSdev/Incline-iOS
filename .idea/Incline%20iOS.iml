@@ -138,18 +138,20 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult+Internal.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult+Internal.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/HistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/WebApiConnector.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ReuseableHistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/AccountTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/BodyCompTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/CardioTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/SettingsTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/EntryTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Incline-Bridging-Header.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
@@ -177,11 +179,11 @@
       <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/InclineApp_2ndIteration_Tests.swift" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphoneos/libPods-Incline.a">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphoneos/libPods-Incline.a" isTestSource="false" />
+    <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-Incline.a">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-Incline.a" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphoneos/libPods-InclineTests.a">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphoneos/libPods-InclineTests.a" isTestSource="false" />
+    <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-InclineTests.a">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-InclineTests.a" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3708FD619B8F60D95C7F6907 /* libPods-InclineTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C016DFB7431646E136CE3694 /* libPods-InclineTests.a */; };
-		705BE4001D03387000172EC5 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BE3FF1D03387000172EC5 /* HistoryTableViewController.swift */; };
-		705BE4021D038CF300172EC5 /* CardioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BE4011D038CF300172EC5 /* CardioTableViewController.swift */; };
 		70F4467A1CFE891B00203756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F446791CFE891B00203756 /* AppDelegate.swift */; };
 		70F446811CFE891B00203756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F4467F1CFE891B00203756 /* Main.storyboard */; };
 		70F446831CFE891B00203756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F446821CFE891B00203756 /* Assets.xcassets */; };
@@ -38,12 +36,16 @@
 		70F4472D1CFE911800203756 /* ic_yogaman_36pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F447171CFE911800203756 /* ic_yogaman_36pt@2x.png */; };
 		70F447301CFE99FF00203756 /* ic_fitness_center_36pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F4472E1CFE99FF00203756 /* ic_fitness_center_36pt.png */; };
 		70F447311CFE99FF00203756 /* ic_fitness_center_36pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F4472F1CFE99FF00203756 /* ic_fitness_center_36pt@2x.png */; };
-		70F447371CFEA6B500203756 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F447361CFEA6B500203756 /* SettingsTableViewController.swift */; };
-		70F4473E1CFF636700203756 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4473C1CFF636700203756 /* AccountTableViewController.swift */; };
-		70F4473F1CFF636700203756 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4473D1CFF636700203756 /* EntryTableViewController.swift */; };
-		70F447411CFF652A00203756 /* BodyCompTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F447401CFF652A00203756 /* BodyCompTableViewController.swift */; };
 		9EE9D8B37CAF0C8CC53689A9 /* libPods-Incline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 175AB02FDBD436D300BC314C /* libPods-Incline.a */; };
-		CFC159CCA546238F16C0EFCE /* ReuseableHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15B62325030A5CAA07EC9 /* ReuseableHistoryTableViewController.swift */; };
+		CFC1511113A72FCC5F4B5DB7 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */; };
+		CFC151F6DEEB88BF53689839 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC152FA8741406D03226E17 /* ApplicationData.swift */; };
+		CFC1535817107FFCD84748A9 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15BECDA6CEB61958455AE /* AccountTableViewController.swift */; };
+		CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */; };
+		CFC15582D4124390F692A61F /* BodyCompTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */; };
+		CFC1575DC610A8C543573B72 /* CardioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */; };
+		CFC1597156A235305B43580F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */; };
+		CFC15A5836E06A9F258BF448 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15C81B40B43A49886ED13 /* EntryTableViewController.swift */; };
+		CFC15E43A0D6CAD6A6E4E690 /* WebApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +68,6 @@
 /* Begin PBXFileReference section */
 		0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig"; sourceTree = "<group>"; };
 		175AB02FDBD436D300BC314C /* libPods-Incline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Incline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		705BE3FF1D03387000172EC5 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		705BE4011D038CF300172EC5 /* CardioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTableViewController.swift; sourceTree = "<group>"; };
 		70F446761CFE891B00203756 /* Incline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Incline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F446791CFE891B00203756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70F446801CFE891B00203756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,16 +102,20 @@
 		70F447171CFE911800203756 /* ic_yogaman_36pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_yogaman_36pt@2x.png"; path = "System Icons (Reference)/ic_yogaman_36pt@2x.png"; sourceTree = "<group>"; };
 		70F4472E1CFE99FF00203756 /* ic_fitness_center_36pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_fitness_center_36pt.png; path = "System Icons (Reference)/ic_fitness_center_36pt.png"; sourceTree = "<group>"; };
 		70F4472F1CFE99FF00203756 /* ic_fitness_center_36pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_fitness_center_36pt@2x.png"; path = "System Icons (Reference)/ic_fitness_center_36pt@2x.png"; sourceTree = "<group>"; };
-		70F447361CFEA6B500203756 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		70F4473C1CFF636700203756 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
-		70F4473D1CFF636700203756 /* EntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
-		70F447401CFF652A00203756 /* BodyCompTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCompTableViewController.swift; sourceTree = "<group>"; };
 		7F7666C02EA890B5043FA8DE /* Pods-InclineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97F6EE151D165A9900F1BAE2 /* Incline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Incline-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1709AEC99C3E5EBA8D05282 /* Pods-Incline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig"; sourceTree = "<group>"; };
 		B547DD499DD365C80E784BB7 /* Pods-Incline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig"; sourceTree = "<group>"; };
 		C016DFB7431646E136CE3694 /* libPods-InclineTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InclineTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFC15B62325030A5CAA07EC9 /* ReuseableHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableHistoryTableViewController.swift; sourceTree = "<group>"; };
+		CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApiConnector.swift; sourceTree = "<group>"; };
+		CFC152FA8741406D03226E17 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableHistoryTableViewController.swift; sourceTree = "<group>"; };
+		CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCompTableViewController.swift; sourceTree = "<group>"; };
+		CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTableViewController.swift; sourceTree = "<group>"; };
+		CFC15BECDA6CEB61958455AE /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		CFC15C81B40B43A49886ED13 /* EntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,17 +184,13 @@
 			isa = PBXGroup;
 			children = (
 				70F446791CFE891B00203756 /* AppDelegate.swift */,
-				70F4473C1CFF636700203756 /* AccountTableViewController.swift */,
-				70F4473D1CFF636700203756 /* EntryTableViewController.swift */,
-				70F447361CFEA6B500203756 /* SettingsTableViewController.swift */,
 				70F4467F1CFE891B00203756 /* Main.storyboard */,
-				705BE4011D038CF300172EC5 /* CardioTableViewController.swift */,
-				70F447401CFF652A00203756 /* BodyCompTableViewController.swift */,
-				705BE3FF1D03387000172EC5 /* HistoryTableViewController.swift */,
 				70F446821CFE891B00203756 /* Assets.xcassets */,
 				70F446841CFE891B00203756 /* LaunchScreen.storyboard */,
 				70F446871CFE891B00203756 /* Info.plist */,
-				CFC15B62325030A5CAA07EC9 /* ReuseableHistoryTableViewController.swift */,
+				CFC158A1B317B9C05713A2AE /* View Controllers */,
+				CFC152FA8741406D03226E17 /* ApplicationData.swift */,
+				CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */,
 			);
 			path = InclineApp;
 			sourceTree = "<group>";
@@ -249,6 +249,20 @@
 				C016DFB7431646E136CE3694 /* libPods-InclineTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFC158A1B317B9C05713A2AE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFC15C81B40B43A49886ED13 /* EntryTableViewController.swift */,
+				CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */,
+				CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */,
+				CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */,
+				CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */,
+				CFC15BECDA6CEB61958455AE /* AccountTableViewController.swift */,
+				CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,14 +518,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				705BE4021D038CF300172EC5 /* CardioTableViewController.swift in Sources */,
 				70F4467A1CFE891B00203756 /* AppDelegate.swift in Sources */,
-				70F447371CFEA6B500203756 /* SettingsTableViewController.swift in Sources */,
-				705BE4001D03387000172EC5 /* HistoryTableViewController.swift in Sources */,
-				70F4473F1CFF636700203756 /* EntryTableViewController.swift in Sources */,
-				70F4473E1CFF636700203756 /* AccountTableViewController.swift in Sources */,
-				70F447411CFF652A00203756 /* BodyCompTableViewController.swift in Sources */,
-				CFC159CCA546238F16C0EFCE /* ReuseableHistoryTableViewController.swift in Sources */,
+				CFC15A5836E06A9F258BF448 /* EntryTableViewController.swift in Sources */,
+				CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */,
+				CFC1597156A235305B43580F /* SettingsTableViewController.swift in Sources */,
+				CFC1511113A72FCC5F4B5DB7 /* HistoryTableViewController.swift in Sources */,
+				CFC1575DC610A8C543573B72 /* CardioTableViewController.swift in Sources */,
+				CFC1535817107FFCD84748A9 /* AccountTableViewController.swift in Sources */,
+				CFC15582D4124390F692A61F /* BodyCompTableViewController.swift in Sources */,
+				CFC151F6DEEB88BF53689839 /* ApplicationData.swift in Sources */,
+				CFC15E43A0D6CAD6A6E4E690 /* WebApiConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
