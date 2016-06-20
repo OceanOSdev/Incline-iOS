@@ -15,6 +15,18 @@ class AccountTableViewController: UITableViewController {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+
+    // Author: Thomas Maloney
+    // Desc: Handles the logout logic for the application
+    @IBAction func btnLogOut(sender: AnyObject) {
+        //TODO: Handle invalid state that will inevitably be passed around the application during runtime
+        WebApiConnector.logOut()
+
+        let alertController = UIAlertController(title: "Log Out Successful", message: "Warning: Application may be unstable until next sign in.", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
     @IBOutlet weak var togHide: UISwitch!
     

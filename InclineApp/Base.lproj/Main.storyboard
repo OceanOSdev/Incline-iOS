@@ -342,6 +342,9 @@
                                                     <state key="normal" title="Logout">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="btnLogOut:" destination="s2b-JJ-8pR" eventType="touchUpInside" id="NBQ-xG-70a"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

@@ -12,6 +12,10 @@ class EntryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         WebApiConnector.getToken(false, parent: self) {
             (result: String?, error: NSError?) -> Void in
@@ -22,7 +26,7 @@ class EntryTableViewController: UITableViewController {
 
             }
         }
-	
+
     }
 
     override func didReceiveMemoryWarning() {
