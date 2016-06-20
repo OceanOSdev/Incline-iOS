@@ -94,7 +94,25 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         }
         
         heightValues = [feet,inches]
-        
+
+        //let response = WebApiConnector.Get(ApplicationData.baseApiAddress + "WeightApi")
+        //print(response)
+        /*WebApiConnector.GET(ApplicationData.baseApiAddress + "WeightApi", parent: self) {
+            (task:NSURLSessionDataTask, response:AnyObject?) -> Void in
+                if response != nil {
+                    let resp = "\(response!)".stringByReplacingOccurrencesOfString("(", withString: "[").stringByReplacingOccurrencesOfString(")", withString: "]")
+                    print(resp)
+                    var thing = JSONParser.Parse("\(resp)")
+                    print(thing)
+                }
+        }*/
+
+
+        //for json in requestThing! {
+        //    things?.append(json["height"]!)
+        //}
+        //print(requestThing)
+        //print(things)
     }
 
     override func didReceiveMemoryWarning() {
@@ -304,35 +322,37 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        /*let tableVC = navVC.viewControllers.first as! HistoryTableViewController
-        
-        if segue.identifier == "showHeightHistory" {
-            tableVC.totalHeightValuesDest = totalHeightValues
-        }
-        else if segue.identifier == "showWeightHistory" {
-            
-            tableVC.totalWeightValuesDest = totalWeightValues
-        }
-        else if segue.identifier == "showBodyFatHistory" {
-            
-            tableVC.totalBodyFatValuesDest = totalBodyFatValues
-        }*/
-        
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
         
         var arrayToPass: [String] = []
         switch segue.identifier! {
         case "showHeightHistory":
+            //let requestThing = WebApiConnector.Get("HeightApi")
             arrayToPass = totalHeightValues.map({"\(($0 / 12)) ft \(($0 % 12)) in"})
+            tableVC.totalValuesDest = arrayToPass
         case "showWeightHistory":
-            arrayToPass = totalWeightValues.map({"\($0) lbs"})
+            var things : [AnyObject]? = []
+            let requestThing = WebApiConnector.Get("WeightApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                print(json!)
+                for jsonRes in json! {
+                    print(jsonRes["weight"])
+                    things?.append(jsonRes["weight"]!)
+                }
+                print(things!.map({$0 as! Int}))
+                arrayToPass = things!.map({"\($0) lbs"})
+                tableVC.totalValuesDest = arrayToPass
+            }
+
         case "showBodyFatHistory":
             arrayToPass = totalBodyFatValues.map({"\($0) %"})
+            tableVC.totalValuesDest = arrayToPass
         default:
             arrayToPass = []
+            tableVC.totalValuesDest = arrayToPass
         }
         
-        tableVC.totalValuesDest = arrayToPass
+
 
         
     }

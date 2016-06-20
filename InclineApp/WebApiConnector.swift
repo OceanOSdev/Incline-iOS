@@ -41,6 +41,7 @@ class WebApiConnector {
         authContext = nil
     }
 
+
     static func GET(apiUrl: String, parent: UIViewController, success: (task:NSURLSessionDataTask, response:AnyObject?) -> Void) {
         let manager = AFHTTPSessionManager()
         manager.responseSerializer = AFJSONResponseSerializer()
@@ -55,6 +56,38 @@ class WebApiConnector {
             (operation: NSURLSessionDataTask?, error: NSError) in
             print(error) //TODO: Implement actual error handling
         }
+    }
+
+    static func Get(apiUrl:String, completion:(json: [[String:AnyObject]]?) -> Void) {
+        var request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string:  ApplicationData.baseApiAddress + apiUrl)!)
+
+        let authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        request.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        let queue : NSOperationQueue = NSOperationQueue()
+        var ret : [[String:AnyObject]]?
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            do {
+
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [[String:AnyObject]] {
+                    //print("Asynchronous\(jsonResult)")
+                    completion(json: jsonResult)
+                }
+
+                //let thing = NSString(data:data!, encoding: NSUTF8StringEncoding)as! String
+                //print(thing)
+                //let another = JSONParser.Parse(thing)
+                //print(another)
+
+                print("Success")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(json: nil)
+            } catch {
+                completion(json: nil)
+            }
+        })
+
+
     }
 
 }

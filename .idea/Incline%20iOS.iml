@@ -147,6 +147,7 @@
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />

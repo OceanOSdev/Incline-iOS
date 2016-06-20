@@ -43,6 +43,7 @@
 		CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */; };
 		CFC15582D4124390F692A61F /* BodyCompTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */; };
 		CFC1575DC610A8C543573B72 /* CardioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */; };
+		CFC1582701CD20C98A41F217 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC155FE857A413DFA00D8C3 /* JSONParser.swift */; };
 		CFC1597156A235305B43580F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */; };
 		CFC15A5836E06A9F258BF448 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15C81B40B43A49886ED13 /* EntryTableViewController.swift */; };
 		CFC15E43A0D6CAD6A6E4E690 /* WebApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */; };
@@ -111,6 +112,7 @@
 		CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApiConnector.swift; sourceTree = "<group>"; };
 		CFC152FA8741406D03226E17 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableHistoryTableViewController.swift; sourceTree = "<group>"; };
+		CFC155FE857A413DFA00D8C3 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCompTableViewController.swift; sourceTree = "<group>"; };
 		CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTableViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CFC158A1B317B9C05713A2AE /* View Controllers */,
 				CFC152FA8741406D03226E17 /* ApplicationData.swift */,
 				CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */,
+				CFC155FE857A413DFA00D8C3 /* JSONParser.swift */,
 			);
 			path = InclineApp;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				CFC15582D4124390F692A61F /* BodyCompTableViewController.swift in Sources */,
 				CFC151F6DEEB88BF53689839 /* ApplicationData.swift in Sources */,
 				CFC15E43A0D6CAD6A6E4E690 /* WebApiConnector.swift in Sources */,
+				CFC1582701CD20C98A41F217 /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
