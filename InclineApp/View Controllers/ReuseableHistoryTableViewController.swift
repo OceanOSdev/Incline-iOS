@@ -11,6 +11,7 @@ class ReuseableHistoryTableViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBOutlet var connectionView: UITableView!
     var totalValuesDest: [String] = []
 
     override func viewDidLoad() {

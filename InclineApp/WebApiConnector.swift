@@ -41,7 +41,7 @@ class WebApiConnector {
         authContext = nil
     }
 
-
+    @available(*, deprecated, message = "GET is deprecated, use Get instead")
     static func GET(apiUrl: String, parent: UIViewController, success: (task:NSURLSessionDataTask, response:AnyObject?) -> Void) {
         let manager = AFHTTPSessionManager()
         manager.responseSerializer = AFJSONResponseSerializer()
@@ -73,10 +73,6 @@ class WebApiConnector {
                     completion(json: jsonResult)
                 }
 
-                //let thing = NSString(data:data!, encoding: NSUTF8StringEncoding)as! String
-                //print(thing)
-                //let another = JSONParser.Parse(thing)
-                //print(another)
 
                 print("Success")
             } catch let error as NSError {

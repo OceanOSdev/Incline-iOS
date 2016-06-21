@@ -325,28 +325,37 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
         
         var arrayToPass: [String] = []
+        var JSONDictToArrayResult: [AnyObject]? = []
         switch segue.identifier! {
         case "showHeightHistory":
-            //let requestThing = WebApiConnector.Get("HeightApi")
-            arrayToPass = totalHeightValues.map({"\(($0 / 12)) ft \(($0 % 12)) in"})
-            tableVC.totalValuesDest = arrayToPass
+            // Creates the request
+            let requestThing = WebApiConnector.Get("HeightApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                    JSONDictToArrayResult = JSONParser.DictionaryToArray("height", dict: json!) // extract only the values with the key "height" and put them into an array.
+                    arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
+                    tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
+                    tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+            }
+
         case "showWeightHistory":
-            var things : [AnyObject]? = []
+
             let requestThing = WebApiConnector.Get("WeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
-                print(json!)
-                for jsonRes in json! {
-                    print(jsonRes["weight"])
-                    things?.append(jsonRes["weight"]!)
-                }
-                print(things!.map({$0 as! Int}))
-                arrayToPass = things!.map({"\($0) lbs"})
-                tableVC.totalValuesDest = arrayToPass
+                    JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
+                    arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
+                    tableVC.totalValuesDest = arrayToPass
+                    tableVC.connectionView.reloadData()
             }
 
         case "showBodyFatHistory":
-            arrayToPass = totalBodyFatValues.map({"\($0) %"})
-            tableVC.totalValuesDest = arrayToPass
+            let requestThing = WebApiConnector.Get("PercentBodyFatApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                    JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
+                    arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
+                    tableVC.totalValuesDest = arrayToPass
+                    tableVC.connectionView.reloadData()
+            }
+
         default:
             arrayToPass = []
             tableVC.totalValuesDest = arrayToPass

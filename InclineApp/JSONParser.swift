@@ -20,4 +20,13 @@ class JSONParser {
 
         return nil
     }
+
+    // Takes a dictionary and returns an array of the values from the specified key
+    static func DictionaryToArray(key: String, dict: [[String:AnyObject]]?) -> [AnyObject]? {
+        var ret : [AnyObject]? = []
+        for array in dict! {
+            ret?.append(array[key]!)
+        }
+        return ret
+    }
 }
