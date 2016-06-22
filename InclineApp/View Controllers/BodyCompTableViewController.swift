@@ -95,24 +95,6 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         heightValues = [feet,inches]
 
-        //let response = WebApiConnector.Get(ApplicationData.baseApiAddress + "WeightApi")
-        //print(response)
-        /*WebApiConnector.GET(ApplicationData.baseApiAddress + "WeightApi", parent: self) {
-            (task:NSURLSessionDataTask, response:AnyObject?) -> Void in
-                if response != nil {
-                    let resp = "\(response!)".stringByReplacingOccurrencesOfString("(", withString: "[").stringByReplacingOccurrencesOfString(")", withString: "]")
-                    print(resp)
-                    var thing = JSONParser.Parse("\(resp)")
-                    print(thing)
-                }
-        }*/
-
-
-        //for json in requestThing! {
-        //    things?.append(json["height"]!)
-        //}
-        //print(requestThing)
-        //print(things)
     }
 
     override func didReceiveMemoryWarning() {
@@ -169,6 +151,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             toolBar.userInteractionEnabled = true
             
             txtWeight.inputAccessoryView = toolBar
+            txtWeight.keyboardType = UIKeyboardType.NumberPad
 
         }
         else if textField == txtBodyFat {
@@ -203,16 +186,31 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let totalInches = feet + inches
         
-        totalHeightValues.append(totalInches)
+        //totalHeightValues.append(totalInches)
         
-        print(totalHeightValues)
+        //print(totalHeightValues)
         
         txtHeight.text = ""
-        
-        let alertController = UIAlertController(title: "\(feet / 12) ft" + " " + "\(inches) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+
+        WebApiConnector.Post("HeightApi", data: ["height":totalInches]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            var urlResponse = dataTask.response as? NSHTTPURLResponse
+
+            var alertController : UIAlertController
+
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(feet / 12) ft" + " " + "\(inches) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     //Height Cancel Method

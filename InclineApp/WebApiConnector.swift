@@ -83,6 +83,20 @@ class WebApiConnector {
             }
         })
 
+    }
+
+    static func Post(apiUrl:String, data:[String:AnyObject], completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void) {
+        let dictAsData: NSData = NSKeyedArchiver.archivedDataWithRootObject(data)
+        let dictionary:NSDictionary? = NSKeyedUnarchiver.unarchiveObjectWithData(dictAsData)! as? NSDictionary
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer.setValue("Bearer \(ApplicationData.userItem.accessToken)", forHTTPHeaderField: "Authorization")
+        manager.POST(ApplicationData.baseApiAddress + apiUrl, parameters: dictionary, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            completion(dataTask: task, httpResponse: response)
+        }) { (operation: NSURLSessionDataTask?, error: NSError) in
+            completion(dataTask: operation!, httpResponse: error)
+        }
 
     }
 
