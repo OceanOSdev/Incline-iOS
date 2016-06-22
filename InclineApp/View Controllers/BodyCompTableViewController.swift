@@ -186,10 +186,6 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let totalInches = feet + inches
         
-        //totalHeightValues.append(totalInches)
-        
-        //print(totalHeightValues)
-        
         txtHeight.text = ""
 
         WebApiConnector.Post("HeightApi", data: ["height":totalInches]) {
@@ -231,17 +227,33 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let pounds = Int(txtWeight.text!)
         
-        
-        totalWeightValues.append(pounds!)
-        
-        print(totalWeightValues)
+
         
         txtWeight.text = ""
+        WebApiConnector.Post("WeightApi", data:["weight":pounds!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            var urlResponse = dataTask.response as? NSHTTPURLResponse
+
+            var alertController : UIAlertController
+
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
-        let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        /*let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentViewController(alertController, animated: true, completion: nil)*/
     }
     
     //Weight Cancel Method
@@ -261,16 +273,32 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let bodyFat = Int(txtBodyFat.text!)
         
-        totalBodyFatValues.append(bodyFat!)
+        //totalBodyFatValues.append(bodyFat!)
         
-        print(totalBodyFatValues)
+        //print(totalBodyFatValues)
         
         txtBodyFat.text = ""
-        
-        let alertController = UIAlertController(title: "\(bodyFat!) %", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+
+        WebApiConnector.Post("PercentBodyFatApi", data:["bodyFat":bodyFat!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            var urlResponse = dataTask.response as? NSHTTPURLResponse
+
+            var alertController : UIAlertController
+
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(bodyFat!) %", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+
     }
     
     //BodyFat Cancel Method
