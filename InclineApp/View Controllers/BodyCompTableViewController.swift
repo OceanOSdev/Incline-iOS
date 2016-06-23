@@ -32,7 +32,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtHeight.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showHeightHistory", sender: totalHeightValues)
+            segueID = "showHeightHistory"
+            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
             print("show height history")
         }
         
@@ -44,7 +45,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtWeight.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showWeightHistory", sender: totalHeightValues)
+            segueID = "showWeightHistory"
+            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
             print("show weight history")
         }
 
@@ -56,7 +58,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtBodyFat.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showBodyFatHistory", sender: totalHeightValues)
+            segueID = "showBodyFatHistory"
+            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
             print("show body fat history")
         }
     }
@@ -74,6 +77,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     var totalHeightValues: [Int] = []
     var totalWeightValues: [Int] = []
     var totalBodyFatValues: [Int] = []
+    
+    var segueID = String()
     
     //Add button for UIPickerView
     var doneHeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
@@ -359,7 +364,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
-        switch segue.identifier! {
+        switch segueID {
         case "showHeightHistory":
             // Creates the request
             let requestThing = WebApiConnector.Get("HeightApi") {
