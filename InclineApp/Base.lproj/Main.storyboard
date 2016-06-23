@@ -887,6 +887,7 @@
                                                     </segments>
                                                     <connections>
                                                         <action selector="btnMileRun:" destination="PAA-CD-5eA" eventType="valueChanged" id="Ja9-Hn-NiP"/>
+                                                        <segue destination="yTZ-oc-pGF" kind="presentation" identifier="showMileRunHistory" id="r81-xs-2YP"/>
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
@@ -1818,7 +1819,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="eca-Ze-Vef"/>
         <segue reference="42L-Wb-kba"/>
-        <segue reference="akP-6E-JJW"/>
+        <segue reference="r81-xs-2YP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
