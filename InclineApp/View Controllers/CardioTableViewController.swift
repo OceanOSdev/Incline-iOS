@@ -40,15 +40,43 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     }
     
     @IBAction func btnHalfMileRun(sender: AnyObject) {
+        
+        if outHalfMileRunButton.selectedSegmentIndex == 1 {
+            txtHalfMileRun.becomeFirstResponder()
+        }
+        else {
+            print("show History")
+        }
     }
     
     @IBAction func btnPacer(sender: AnyObject) {
+        
+        if outPacerButton.selectedSegmentIndex == 1 {
+            txtPacer.becomeFirstResponder()
+        }
+        else {
+            print("show History")
+        }
     }
     
     @IBAction func btnStepTest(sender: AnyObject) {
+        
+        if outStepTestButton.selectedSegmentIndex == 1 {
+            txtStepTest.becomeFirstResponder()
+        }
+        else {
+            print("show History")
+        }
     }
     
     @IBAction func btnHeartStepTest(sender: AnyObject) {
+        
+        if outHeartStepTestButton.selectedSegmentIndex == 1 {
+            txtHeartStepTest.becomeFirstResponder()
+        }
+        else {
+            print("show History")
+        }
     }
     
     //Setup and Initalize Arrays and Variables needed
@@ -64,8 +92,22 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     var halfmileRunItem1 = String()
     var halfmileRunItem2 = String()
     
-    var totalTimeValue: [Int] = []
+    var totalMileRunTimeValue: [Int] = []
+    var totalHalfMileRunTimeValue: [Int] = []
+    var totalPacerLapsValue: [Int] = []
+    var totalStepTestStepsValue: [Int] = []
+    var totalStepTestHeartValue: [Int] = []
     
+    let doneMileRunButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneMileRun))
+    
+    let doneHalfMileButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHalfMileRun))
+    
+    let donePacerButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.donePacer))
+    
+    let doneStepsButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneSteps))
+
+    let doneHeartButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHeart))
+
     //View did load shit here
     
     override func viewDidLoad() {
@@ -113,11 +155,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             toolBar.translucent = true
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.doneMileRun))
+            
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelMileRun))
             
-            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.setItems([cancelButton, spaceButton, doneMileRunButton], animated: false)
+            doneMileRunButton.enabled = false
             toolBar.userInteractionEnabled = true
             
             txtMileRun.inputView = timePicker
@@ -139,18 +182,100 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             toolBar.translucent = true
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.doneHalfMileRun))
+            
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelHalfMileRun))
             
-            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.setItems([cancelButton, spaceButton, doneHalfMileButton], animated: false)
+            doneHalfMileButton.enabled = false
             toolBar.userInteractionEnabled = true
             
             txtHalfMileRun.inputView = timePicker
             txtHalfMileRun.inputAccessoryView = toolBar
         }
-        
+        else if textField == txtPacer {
+            
+            txtPacer.text = ""
+            
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.Default
+            toolBar.translucent = true
+            toolBar.sizeToFit()
+            
+            
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelPacer))
+            
+            toolBar.setItems([cancelButton, spaceButton, donePacerButton], animated: false)
+            donePacerButton.enabled = false
+            toolBar.userInteractionEnabled = true
+            
+            txtPacer.keyboardType = UIKeyboardType.NumberPad
+            txtPacer.inputAccessoryView = toolBar
+        }
+        else if textField == txtStepTest {
+            
+            txtStepTest.text = ""
+            
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.Default
+            toolBar.translucent = true
+            toolBar.sizeToFit()
+            
+            
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelSteps))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneStepsButton], animated: false)
+            doneStepsButton.enabled = false
+            toolBar.userInteractionEnabled = true
+            
+            txtStepTest.keyboardType = UIKeyboardType.NumberPad
+            txtStepTest.inputAccessoryView = toolBar
+        }
+        else if textField == txtHeartStepTest {
+            
+            txtHeartStepTest.text = ""
+            
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.Default
+            toolBar.translucent = true
+            toolBar.sizeToFit()
+            
+            
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelHeart))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneHeartButton], animated: false)
+            doneHeartButton.enabled = false
+            toolBar.userInteractionEnabled = true
+            
+            txtHeartStepTest.keyboardType = UIKeyboardType.NumberPad
+            txtHeartStepTest.inputAccessoryView = toolBar
+        }
     }
+    
+    //TextField text inside changed delegate method
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == txtPacer {
+            
+            donePacerButton.enabled = true
+            
+        }
+        else if textField == txtStepTest {
+            
+            doneStepsButton.enabled = true
+        }
+        else if textField == txtHeartStepTest {
+            
+            doneHeartButton.enabled = true
+        }
+        
+        return true
+    }
+
     
     //Time Done Method
 
@@ -169,9 +294,9 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let totalMinutes = (minutes * 60) + seconds
         
-        totalTimeValue.append(totalMinutes)
+        totalMileRunTimeValue.append(totalMinutes)
         
-        print(totalTimeValue)
+        print(totalMileRunTimeValue)
         
         txtMileRun.text = ""
         
@@ -184,7 +309,6 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         txtMileRun.text = ""
         
         txtMileRun.resignFirstResponder()
-
         
     }
     
@@ -192,14 +316,115 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     
     func doneHalfMileRun() {
         
+        txtHalfMileRun.resignFirstResponder()
+        
+        let minutes = Int(halfmileRunItem1.componentsSeparatedByString(" ")[0])!
+        let seconds = Int(halfmileRunItem2.componentsSeparatedByString(" ")[0])!
+        
+        let alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        let totalMinutes = (minutes * 60) + seconds
+        
+        totalHalfMileRunTimeValue.append(totalMinutes)
+        
+        print(totalHalfMileRunTimeValue)
+        
+        txtHalfMileRun.text = ""
+        
     }
     
     //Time Cancel Method
     
     func cancelHalfMileRun() {
         
+        txtHalfMileRun.text = ""
+        
+        txtHalfMileRun.resignFirstResponder()
+        
     }
     
+    func donePacer() {
+        
+        txtPacer.resignFirstResponder()
+        
+        let laps = Int(txtPacer.text!)
+        
+        totalPacerLapsValue.append(laps!)
+        
+        print(totalPacerLapsValue)
+        
+        let alertController = UIAlertController(title: "\(laps!) laps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        txtPacer.text = ""
+        
+    }
+    
+    func cancelPacer() {
+        
+        txtPacer.text = ""
+        
+        txtPacer.resignFirstResponder()
+        
+    }
+    
+    func doneSteps() {
+        
+        txtStepTest.resignFirstResponder()
+        
+        let steps = Int(txtStepTest.text!)
+        
+        totalStepTestStepsValue.append(steps!)
+        
+        print(totalStepTestStepsValue)
+        
+        let alertController = UIAlertController(title: "\(steps!) steps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        txtStepTest.text = ""
+
+        
+    }
+    
+    func cancelSteps() {
+        
+        txtStepTest.text = ""
+        
+        txtStepTest.resignFirstResponder()
+    }
+    
+    func doneHeart() {
+        
+        txtHeartStepTest.resignFirstResponder()
+        
+        let bpm = Int(txtHeartStepTest.text!)
+        
+        totalStepTestHeartValue.append(bpm!)
+        
+        print(totalStepTestHeartValue)
+        
+        let alertController = UIAlertController(title: "\(bpm!) bpm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        txtHeartStepTest.text = ""
+    }
+    
+    func cancelHeart() {
+        
+        txtHeartStepTest.text = ""
+        
+        txtHeartStepTest.resignFirstResponder()
+        
+    }
     
     //UIPickerView Delegate methods here
     
@@ -224,6 +449,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         if pickerView.tag == 1 {
             
+            doneMileRunButton.enabled = true
+            
             mileRunItem1 = timeValues[0][pickerView.selectedRowInComponent(0)]
             mileRunItem2 = timeValues[1][pickerView.selectedRowInComponent(1)]
             
@@ -231,6 +458,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
 
         }
         else {
+            
+            doneHalfMileButton.enabled = true
             
             halfmileRunItem1 = timeValues[0][pickerView.selectedRowInComponent(0)]
             halfmileRunItem2 = timeValues[1][pickerView.selectedRowInComponent(1)]

@@ -37,6 +37,7 @@ class ReuseableHistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         if totalValuesDest.count > 0 {
+            //cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
             cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
         }
         return cell
