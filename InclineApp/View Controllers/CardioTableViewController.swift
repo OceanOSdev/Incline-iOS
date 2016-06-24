@@ -339,9 +339,9 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         let minutes = Int(halfmileRunItem1.componentsSeparatedByString(" ")[0])!
         let seconds = Int(halfmileRunItem2.componentsSeparatedByString(" ")[0])!
         
-        let totalMinutes = (minutes * 60) + seconds
-        
-        WebApiConnector.Post("HalfMileTimeApi", data: ["halfMileTime":totalMinutes]) {
+        let time = "00:\(halfmileRunItem1.componentsSeparatedByString(" ")[0]):\(halfmileRunItem2.componentsSeparatedByString(" ")[0]).0000000"
+
+        WebApiConnector.Post("HalfMileTimeApi", data: ["halfMileTime":time]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
             let urlResponse = dataTask.response as? NSHTTPURLResponse
             
@@ -536,15 +536,15 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             _ = WebApiConnector.Get("MileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
-                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0)) min \(($0)) sec"})
+                arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()             }
             
         case "showHalfMileRun":
             _ = WebApiConnector.Get("HalfMileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
-                JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
-                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) min \(($0 % 60)) sec"})
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("halfMileTime", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
             }
