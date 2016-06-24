@@ -6,61 +6,22 @@
       <sourceFolder url="file://$MODULE_DIR$/InclineAppUITests/InclineApp_2ndIteration_UITests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Incline-Bridging-Header.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/WebApiConnector.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/InclineApp_2ndIteration_Tests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x(Colored).png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt(Colored).png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-resources.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-acknowledgements.markdown" isTestSource="false" />
@@ -68,6 +29,19 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSString+ADHelperMethods.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSURL+ADExtensions.m" isTestSource="false" />
@@ -182,6 +156,33 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x(Colored).png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt(Colored).png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/InclineApp_2ndIteration_Tests.swift" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-cydlhrbiliyipwclpreyrjpzgzdi/Build/Products/Debug-iphonesimulator/libPods-Incline.a">
       <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-cydlhrbiliyipwclpreyrjpzgzdi/Build/Products/Debug-iphonesimulator/libPods-Incline.a" isTestSource="false" />

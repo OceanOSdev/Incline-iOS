@@ -122,7 +122,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1...22 {
+        for i in 1...59 {
             
             minutes.append(String (format: "%d min ",i))
             

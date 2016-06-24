@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3708FD619B8F60D95C7F6907 /* libPods-InclineTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C016DFB7431646E136CE3694 /* libPods-InclineTests.a */; };
+		701B02BB1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */; };
 		7082265B1D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png in Resources */ = {isa = PBXBuildFile; fileRef = 708226591D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png */; };
 		7082265C1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png in Resources */ = {isa = PBXBuildFile; fileRef = 7082265A1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png */; };
 		7082265E1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig"; sourceTree = "<group>"; };
 		175AB02FDBD436D300BC314C /* libPods-Incline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Incline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthAndEnduranceTableViewController.swift; sourceTree = "<group>"; };
 		708226591D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_playlist_add_36pt(Colored).png"; path = "System Icons (Reference)/ic_playlist_add_36pt(Colored).png"; sourceTree = "<group>"; };
 		7082265A1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_playlist_add_36pt@2x(Colored).png"; path = "System Icons (Reference)/ic_playlist_add_36pt@2x(Colored).png"; sourceTree = "<group>"; };
 		7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibilityUITableViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				CFC15BECDA6CEB61958455AE /* AccountTableViewController.swift */,
 				CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */,
 				7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */,
+				701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F4467A1CFE891B00203756 /* AppDelegate.swift in Sources */,
+				701B02BB1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift in Sources */,
 				CFC15A5836E06A9F258BF448 /* EntryTableViewController.swift in Sources */,
 				CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */,
 				7082265E1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift in Sources */,

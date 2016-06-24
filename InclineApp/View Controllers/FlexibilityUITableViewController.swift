@@ -12,15 +12,11 @@ class FlexibilityUITableViewController: UITableViewController {
     
     //TextField Outlets
     @IBOutlet weak var txtSitReach: UITextField!
-    
     @IBOutlet weak var txtTrunkLift: UITextField!
-    
     @IBOutlet weak var txtArmShoulder: UITextField!
     //Button Outlets
     @IBOutlet weak var outSitReachButton: UISegmentedControl!
-    
     @IBOutlet weak var outTrunkLiftButton: UISegmentedControl!
-    
     @IBOutlet weak var outArmShoulderButton: UISegmentedControl!
     //Button Actions
     @IBAction func btnSitReachButton(sender: AnyObject) {
@@ -29,8 +25,9 @@ class FlexibilityUITableViewController: UITableViewController {
             txtSitReach.becomeFirstResponder()
         }
         else {
-            //performSegueWithIdentifier("showHeightHistory", sender: totalHeightValues)
-            print("show height history")
+            segueID = "showSitReach"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show history")
         }
         
     }
@@ -40,8 +37,9 @@ class FlexibilityUITableViewController: UITableViewController {
             txtTrunkLift.becomeFirstResponder()
         }
         else {
-            //performSegueWithIdentifier("showHeightHistory", sender: totalHeightValues)
-            print("show height history")
+            segueID = "showTrunkLift"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show history")
         }
         
     }
@@ -51,15 +49,16 @@ class FlexibilityUITableViewController: UITableViewController {
             txtArmShoulder.becomeFirstResponder()
         }
         else {
-            //performSegueWithIdentifier("showHeightHistory", sender: totalHeightValues)
-            print("show height history")
+            segueID = "showArmShoulder"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show history")
         }
         
     }
     
-    var totalSitReachValues: [Int] = []
-    var totalTrunkLiftValues: [Int] = []
-    var totalArmShoulderValues: [Int] = []
+    var totalValuesToPass: [Int] = []
+    
+    var segueID = String()
     
     let doneSitReachButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneSitReach))
     
@@ -102,6 +101,8 @@ class FlexibilityUITableViewController: UITableViewController {
             txtSitReach.keyboardType = UIKeyboardType.NumberPad
             txtSitReach.inputAccessoryView = toolBar
             
+            txtSitReach.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+            
         }
         else if textField == txtTrunkLift {
             
@@ -123,6 +124,8 @@ class FlexibilityUITableViewController: UITableViewController {
             
             txtTrunkLift.keyboardType = UIKeyboardType.NumberPad
             txtTrunkLift.inputAccessoryView = toolBar
+           
+            txtTrunkLift.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
             
         }
         else if textField == txtArmShoulder {
@@ -146,35 +149,30 @@ class FlexibilityUITableViewController: UITableViewController {
             txtArmShoulder.keyboardType = UIKeyboardType.NumberPad
             txtArmShoulder.inputAccessoryView = toolBar
             
+            txtArmShoulder.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+            
         }
 
         
         
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textDidChange(textField: UITextField) {
         
         if textField == txtSitReach {
             
-            if txtSitReach.text?.isEmpty == true {
-            
-                doneSitReachButton.enabled = false
-            }
-            else {
-                doneSitReachButton.enabled = true
-            }
+            doneSitReachButton.enabled = !txtSitReach.text!.isEmpty
         }
         else if textField == txtTrunkLift {
             
-            doneTrunkLiftButton.enabled = true
+            doneTrunkLiftButton.enabled = !txtTrunkLift.text!.isEmpty
         }
         else if textField == txtArmShoulder {
-            doneArmShoulderButton.enabled = true
+            
+            doneArmShoulderButton.enabled = !txtArmShoulder.text!.isEmpty
         }
         
-        return true
     }
-
     
     
     func doneSitReach() {
@@ -183,15 +181,25 @@ class FlexibilityUITableViewController: UITableViewController {
         
         let centimeters = Int(txtSitReach.text!)
         
-        
-        totalSitReachValues.append(centimeters!)
-        
-        print(totalSitReachValues)
-        
-        let alertController = UIAlertController(title: "\(centimeters!) cm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("SitAndReachApi", data: ["sitAndReach":centimeters!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(centimeters!) cm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
         txtSitReach.text = ""
         
@@ -211,15 +219,25 @@ class FlexibilityUITableViewController: UITableViewController {
         
         let inches = Int(txtTrunkLift.text!)
         
-        
-        totalTrunkLiftValues.append(inches!)
-        
-        print(totalTrunkLiftValues)
-        
-        let alertController = UIAlertController(title: "\(inches!) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("TrunkLiftApi", data: ["trunkLift":inches!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(inches!) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
         txtTrunkLift.text = ""
         
@@ -238,16 +256,26 @@ class FlexibilityUITableViewController: UITableViewController {
         
         let inches = Int(txtArmShoulder.text!)
         
-        
-        totalArmShoulderValues.append(inches!)
-        
-        print(totalArmShoulderValues)
-        
-        let alertController = UIAlertController(title: "\(inches!) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
+        WebApiConnector.Post("ArmAndShoulderApi", data: ["armAndShoulder":inches!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(inches!) in", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+
         txtArmShoulder.text = ""
 
     }
@@ -258,5 +286,51 @@ class FlexibilityUITableViewController: UITableViewController {
         
         txtArmShoulder.resignFirstResponder()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        
+        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        
+        var arrayToPass: [String] = []
+        var JSONDictToArrayResult: [AnyObject]? = []
+        switch segueID {
+            
+        case "showSitReach":
+            
+            _ = WebApiConnector.Get("SitAndReachApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("sitAndReach", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) cm"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        case "showTrunkLift":
+            _ = WebApiConnector.Get("TrunkLiftApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("trunkLift", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        case "showArmShoulder":
+            _ = WebApiConnector.Get("ArmAndShoulderApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("armAndShoulder", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        default:
+            arrayToPass = []
+            tableVC.totalValuesDest = arrayToPass
+        }
+        
+    }
+
     
 }

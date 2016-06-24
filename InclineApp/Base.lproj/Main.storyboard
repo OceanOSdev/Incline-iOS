@@ -1414,6 +1414,7 @@
                         <outlet property="txtArmShoulder" destination="KFS-1w-Y8D" id="Pkb-Hf-Bta"/>
                         <outlet property="txtSitReach" destination="ObJ-vc-3aD" id="jcV-O4-2Rv"/>
                         <outlet property="txtTrunkLift" destination="8SY-aj-E2T" id="d4g-MY-Wv2"/>
+                        <segue destination="yTZ-oc-pGF" kind="presentation" identifier="showHistory" id="Qde-b1-0dN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osg-oP-7lC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1423,7 +1424,7 @@
         <!--Strength & Endurance-->
         <scene sceneID="sEO-2U-rIG">
             <objects>
-                <tableViewController title="Strength &amp; Endurance" id="ZOP-oe-c4u" sceneMemberID="viewController">
+                <tableViewController title="Strength &amp; Endurance" id="ZOP-oe-c4u" customClass="StrengthAndEnduranceTableViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="pBP-00-qNG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1444,16 +1445,27 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-DK-d8r">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-DK-d8r">
                                                     <rect key="frame" x="28" y="4" width="564" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="7IW-Ql-TDd"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smq-Yg-LFm">
+                                                    <rect key="frame" x="24" y="0.0" width="576" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="smq-Yg-LFm" secondAttribute="bottom" id="2nn-x4-O09"/>
                                                 <constraint firstAttribute="bottom" secondItem="ubn-DK-d8r" secondAttribute="bottom" constant="4" id="6Wg-a6-lrl"/>
+                                                <constraint firstAttribute="trailing" secondItem="smq-Yg-LFm" secondAttribute="trailing" id="9iT-0e-q7I"/>
+                                                <constraint firstItem="smq-Yg-LFm" firstAttribute="top" secondItem="BwC-5O-6Q4" secondAttribute="top" id="LVi-N9-paI"/>
                                                 <constraint firstItem="ubn-DK-d8r" firstAttribute="top" secondItem="BwC-5O-6Q4" secondAttribute="top" constant="4" id="RYI-dJ-lce"/>
+                                                <constraint firstItem="smq-Yg-LFm" firstAttribute="leading" secondItem="Bvo-ua-rXO" secondAttribute="trailing" id="U1f-hN-wPc"/>
                                                 <constraint firstItem="ubn-DK-d8r" firstAttribute="leading" secondItem="Bvo-ua-rXO" secondAttribute="trailing" constant="4" id="dHL-S8-hCj"/>
                                                 <constraint firstItem="Bvo-ua-rXO" firstAttribute="leading" secondItem="BwC-5O-6Q4" secondAttribute="leading" constant="8" id="fKC-mW-zbX"/>
                                                 <constraint firstItem="Bvo-ua-rXO" firstAttribute="top" secondItem="BwC-5O-6Q4" secondAttribute="top" constant="8" id="h5S-co-EDb"/>
@@ -1475,6 +1487,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnMaxBechButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="Fc4-LN-Ejb"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1502,21 +1517,32 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-6P-hhO">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-6P-hhO">
                                                     <rect key="frame" x="28" y="4" width="564" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="xJN-Ld-WvO"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P97-gG-KM4">
+                                                    <rect key="frame" x="0.0" y="0.5" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="P97-gG-KM4" firstAttribute="top" secondItem="nXI-gH-0m5" secondAttribute="top" id="AiK-PV-ZYu"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rc1-6P-hhO" secondAttribute="trailing" constant="8" id="C66-8n-m7t"/>
+                                                <constraint firstItem="P97-gG-KM4" firstAttribute="leading" secondItem="nXI-gH-0m5" secondAttribute="leading" id="Ou9-ii-MHq"/>
                                                 <constraint firstItem="3eZ-EQ-3r1" firstAttribute="leading" secondItem="nXI-gH-0m5" secondAttribute="leading" constant="8" id="P1Q-MY-DGH"/>
                                                 <constraint firstItem="3eZ-EQ-3r1" firstAttribute="top" secondItem="nXI-gH-0m5" secondAttribute="top" constant="8" id="Tmf-yi-Vga"/>
                                                 <constraint firstAttribute="bottom" secondItem="3eZ-EQ-3r1" secondAttribute="bottom" constant="8" id="U1S-fc-5Cb"/>
                                                 <constraint firstAttribute="bottom" secondItem="Rc1-6P-hhO" secondAttribute="bottom" constant="4" id="aUA-9S-15a"/>
                                                 <constraint firstItem="Rc1-6P-hhO" firstAttribute="top" secondItem="nXI-gH-0m5" secondAttribute="top" constant="4" id="b2D-Rg-8HJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="P97-gG-KM4" secondAttribute="bottom" id="elw-Go-v3Q"/>
                                                 <constraint firstItem="Rc1-6P-hhO" firstAttribute="leading" secondItem="3eZ-EQ-3r1" secondAttribute="trailing" constant="4" id="w0E-0p-oj1"/>
+                                                <constraint firstAttribute="trailing" secondItem="P97-gG-KM4" secondAttribute="trailing" id="wZP-BS-YqE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1533,6 +1559,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnMaxLegPressButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="UXS-Xf-Zvu"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1560,20 +1589,31 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z9g-Vp-jfK">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z9g-Vp-jfK">
                                                     <rect key="frame" x="39" y="4" width="553" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="23f-sg-Mv6"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxP-ha-PgO">
+                                                    <rect key="frame" x="0.0" y="0.5" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="z9g-Vp-jfK" firstAttribute="leading" secondItem="UaE-Dq-sNM" secondAttribute="trailing" constant="4" id="4yt-hu-0HU"/>
+                                                <constraint firstItem="SxP-ha-PgO" firstAttribute="top" secondItem="5zO-9Y-82D" secondAttribute="top" id="686-uc-T5Q"/>
                                                 <constraint firstAttribute="trailing" secondItem="z9g-Vp-jfK" secondAttribute="trailing" constant="8" id="BJ9-Cp-v3x"/>
                                                 <constraint firstAttribute="bottom" secondItem="UaE-Dq-sNM" secondAttribute="bottom" constant="8" id="P3f-Gw-bzM"/>
                                                 <constraint firstItem="UaE-Dq-sNM" firstAttribute="leading" secondItem="5zO-9Y-82D" secondAttribute="leading" constant="8" id="QHr-NI-egL"/>
                                                 <constraint firstItem="UaE-Dq-sNM" firstAttribute="top" secondItem="5zO-9Y-82D" secondAttribute="top" constant="8" id="R4H-uy-Xmy"/>
+                                                <constraint firstAttribute="trailing" secondItem="SxP-ha-PgO" secondAttribute="trailing" id="YyJ-Ny-LMF"/>
+                                                <constraint firstItem="SxP-ha-PgO" firstAttribute="leading" secondItem="5zO-9Y-82D" secondAttribute="leading" id="ijb-So-7gg"/>
                                                 <constraint firstAttribute="bottom" secondItem="z9g-Vp-jfK" secondAttribute="bottom" constant="4" id="jbM-p4-Dvd"/>
+                                                <constraint firstAttribute="bottom" secondItem="SxP-ha-PgO" secondAttribute="bottom" id="k9n-fu-Rah"/>
                                                 <constraint firstItem="z9g-Vp-jfK" firstAttribute="top" secondItem="5zO-9Y-82D" secondAttribute="top" constant="4" id="xBW-aU-1CH"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1591,6 +1631,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnPullUpsButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="S5s-uR-bXN"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1618,18 +1661,29 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-jx-0VE">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-jx-0VE">
                                                     <rect key="frame" x="38" y="4" width="554" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="sCu-0f-HuN"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXH-Mc-wEW">
+                                                    <rect key="frame" x="0.0" y="0.5" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uhY-Me-O7q" firstAttribute="leading" secondItem="2bX-0Y-W5g" secondAttribute="leading" constant="8" id="4X7-e4-MFK"/>
+                                                <constraint firstAttribute="bottom" secondItem="eXH-Mc-wEW" secondAttribute="bottom" id="7br-HK-TsX"/>
+                                                <constraint firstAttribute="trailing" secondItem="eXH-Mc-wEW" secondAttribute="trailing" id="Ag9-jo-Roa"/>
                                                 <constraint firstItem="9C7-jx-0VE" firstAttribute="top" secondItem="2bX-0Y-W5g" secondAttribute="top" constant="4" id="FOQ-JN-XM6"/>
                                                 <constraint firstItem="9C7-jx-0VE" firstAttribute="leading" secondItem="uhY-Me-O7q" secondAttribute="trailing" constant="4" id="Kg7-xO-Tsw"/>
                                                 <constraint firstAttribute="bottom" secondItem="9C7-jx-0VE" secondAttribute="bottom" constant="4" id="aNx-Kw-3lo"/>
+                                                <constraint firstItem="eXH-Mc-wEW" firstAttribute="top" secondItem="2bX-0Y-W5g" secondAttribute="top" id="dDP-r1-WKW"/>
+                                                <constraint firstItem="eXH-Mc-wEW" firstAttribute="leading" secondItem="2bX-0Y-W5g" secondAttribute="leading" id="dpP-AJ-mRQ"/>
                                                 <constraint firstItem="uhY-Me-O7q" firstAttribute="top" secondItem="2bX-0Y-W5g" secondAttribute="top" constant="8" id="lWt-7m-DQ3"/>
                                                 <constraint firstAttribute="trailing" secondItem="9C7-jx-0VE" secondAttribute="trailing" constant="8" id="qs9-I8-lS1"/>
                                                 <constraint firstAttribute="bottom" secondItem="uhY-Me-O7q" secondAttribute="bottom" constant="8" id="wKR-g7-Cec"/>
@@ -1649,6 +1703,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnFlexedArmHangButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="40K-V8-PaQ"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1676,20 +1733,31 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-Ve-00h">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-Ve-00h">
                                                     <rect key="frame" x="39" y="4" width="553" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="187-zJ-gI4"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jr-qR-zF1">
+                                                    <rect key="frame" x="0.0" y="0.5" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="EsQ-ma-fqs" firstAttribute="top" secondItem="TSO-bb-ScY" secondAttribute="top" constant="8" id="1jW-c1-LUP"/>
                                                 <constraint firstItem="EsQ-ma-fqs" firstAttribute="leading" secondItem="TSO-bb-ScY" secondAttribute="leading" constant="8" id="Rdm-K5-WGy"/>
+                                                <constraint firstItem="6Jr-qR-zF1" firstAttribute="top" secondItem="TSO-bb-ScY" secondAttribute="top" id="ZTY-dh-Tb8"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Jr-qR-zF1" secondAttribute="trailing" id="cZB-XF-x1l"/>
                                                 <constraint firstAttribute="trailing" secondItem="7HO-Ve-00h" secondAttribute="trailing" constant="8" id="csy-9w-FjM"/>
+                                                <constraint firstItem="6Jr-qR-zF1" firstAttribute="leading" secondItem="TSO-bb-ScY" secondAttribute="leading" id="d6J-JI-mB5"/>
                                                 <constraint firstAttribute="bottom" secondItem="EsQ-ma-fqs" secondAttribute="bottom" constant="8" id="ePK-PN-Erh"/>
                                                 <constraint firstAttribute="bottom" secondItem="7HO-Ve-00h" secondAttribute="bottom" constant="4" id="kkm-m7-Jyz"/>
                                                 <constraint firstItem="7HO-Ve-00h" firstAttribute="leading" secondItem="EsQ-ma-fqs" secondAttribute="trailing" constant="4" id="tPm-Y0-Xfn"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Jr-qR-zF1" secondAttribute="bottom" id="xMF-RF-uIb"/>
                                                 <constraint firstItem="7HO-Ve-00h" firstAttribute="top" secondItem="TSO-bb-ScY" secondAttribute="top" constant="4" id="xMe-dN-x4L"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1707,6 +1775,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnRightAnglePushUpsButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="o5a-nd-gdw"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1734,18 +1805,29 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Select Here" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTC-CP-mlm">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTC-CP-mlm">
                                                     <rect key="frame" x="39" y="4" width="553" height="36"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ZOP-oe-c4u" id="7Pf-yr-Oqe"/>
+                                                    </connections>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-aX-QFk">
+                                                    <rect key="frame" x="0.0" y="0.5" width="600" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KTC-CP-mlm" firstAttribute="leading" secondItem="UT6-uJ-Qgt" secondAttribute="trailing" constant="4" id="15X-dD-okh"/>
+                                                <constraint firstItem="Upn-aX-QFk" firstAttribute="top" secondItem="NBx-r0-duK" secondAttribute="top" id="2N5-Ka-90F"/>
+                                                <constraint firstItem="Upn-aX-QFk" firstAttribute="leading" secondItem="NBx-r0-duK" secondAttribute="leading" id="5nf-R9-eK1"/>
                                                 <constraint firstItem="KTC-CP-mlm" firstAttribute="top" secondItem="NBx-r0-duK" secondAttribute="top" constant="4" id="Rtn-Nq-ath"/>
                                                 <constraint firstAttribute="trailing" secondItem="KTC-CP-mlm" secondAttribute="trailing" constant="8" id="Ttb-8v-7T7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Upn-aX-QFk" secondAttribute="bottom" id="Y9j-Wx-iU8"/>
                                                 <constraint firstAttribute="bottom" secondItem="KTC-CP-mlm" secondAttribute="bottom" constant="4" id="a8V-ri-5d2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Upn-aX-QFk" secondAttribute="trailing" id="d0f-o7-8BE"/>
                                                 <constraint firstItem="UT6-uJ-Qgt" firstAttribute="leading" secondItem="NBx-r0-duK" secondAttribute="leading" constant="8" id="fuE-5S-47X"/>
                                                 <constraint firstAttribute="bottom" secondItem="UT6-uJ-Qgt" secondAttribute="bottom" constant="8" id="s16-Co-SCZ"/>
                                                 <constraint firstItem="UT6-uJ-Qgt" firstAttribute="top" secondItem="NBx-r0-duK" secondAttribute="top" constant="8" id="uNf-e5-5Ud"/>
@@ -1765,6 +1847,9 @@
                                                         <segment title="HISTORY"/>
                                                         <segment title="ADD"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="btnCurlUpsButton:" destination="ZOP-oe-c4u" eventType="valueChanged" id="qiE-1X-7e2"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1780,6 +1865,21 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Strength &amp; Endurance" id="Vnp-2v-MJ2"/>
+                    <connections>
+                        <outlet property="outCurlUpsButton" destination="ZZY-GI-8CN" id="FXp-d3-b8c"/>
+                        <outlet property="outFlexedArmHangButton" destination="a3O-Po-qNT" id="D7y-0s-oBp"/>
+                        <outlet property="outMaxBenchButton" destination="AZZ-KY-yoZ" id="RXc-cH-Doe"/>
+                        <outlet property="outMaxLegPressButton" destination="DR4-XM-Gj6" id="qc5-61-2CF"/>
+                        <outlet property="outPullUpsButton" destination="r4M-8A-BGK" id="NRp-Rl-CF9"/>
+                        <outlet property="outRightAnglePushUpsButton" destination="gvg-2i-i6S" id="aIE-25-Q3q"/>
+                        <outlet property="txtCurlUps" destination="KTC-CP-mlm" id="Ogj-rm-2Vy"/>
+                        <outlet property="txtFlexedArmHang" destination="9C7-jx-0VE" id="kaO-Fu-kP9"/>
+                        <outlet property="txtMaxBench" destination="ubn-DK-d8r" id="DSg-Jh-GI0"/>
+                        <outlet property="txtMaxLegPress" destination="Rc1-6P-hhO" id="IQh-Ui-U5e"/>
+                        <outlet property="txtPullUps" destination="z9g-Vp-jfK" id="Bjh-qU-Uss"/>
+                        <outlet property="txtRightAnglePushUps" destination="7HO-Ve-00h" id="huK-Ks-YTz"/>
+                        <segue destination="yTZ-oc-pGF" kind="presentation" identifier="showHistory" id="ri5-a3-LvO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFX-Kj-bL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1833,9 +1933,9 @@
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zQb-BK-fTR"/>
-        <segue reference="fw6-N1-ceu"/>
         <segue reference="9Qy-qW-M55"/>
+        <segue reference="zQb-BK-fTR"/>
+        <segue reference="ri5-a3-LvO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

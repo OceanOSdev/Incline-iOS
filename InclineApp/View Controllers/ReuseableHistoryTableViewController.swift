@@ -54,6 +54,6 @@ class ReuseableHistoryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
-        return "Remove" //or customize for each indexPath
+        return "Delete" //or customize for each indexPath
     }
 }
