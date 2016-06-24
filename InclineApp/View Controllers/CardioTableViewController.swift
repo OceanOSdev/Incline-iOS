@@ -292,12 +292,11 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtMileRun.resignFirstResponder()
         
-        let minutes = Int(mileRunItem1.componentsSeparatedByString(" ")[0])!
-        let seconds = Int(mileRunItem2.componentsSeparatedByString(" ")[0])!
+        let time = "00:\(mileRunItem1.componentsSeparatedByString(" ")[0]):\(mileRunItem2.componentsSeparatedByString(" ")[0]).0000000"
         
-        let totalSeconds = (minutes * 60) + seconds
+        //(hours):(minutes):(seconds).(subseconds)
         
-        WebApiConnector.Post("MileTimeApi", data: ["mileTime":totalSeconds]) {
+        WebApiConnector.Post("MileTimeApi", data: ["mileTime":time]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
             let urlResponse = dataTask.response as? NSHTTPURLResponse
             
@@ -305,7 +304,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             if let _ = urlResponse {
                 if urlResponse?.statusCode < 400 {
-                    alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController = UIAlertController(title: "\(self.mileRunItem1)" + " " + "\(self.mileRunItem2)", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
                 }
                 else {
                     alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -536,17 +535,16 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             // Creates the request
             _ = WebApiConnector.Get("MileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
-                JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!) // extract only the values with the key "height" and put them into an array.
-                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) ft \(($0 % 60)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
-                tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
-                tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
-            }
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0)) min \(($0)) sec"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()             }
             
         case "showHalfMileRun":
             _ = WebApiConnector.Get("HalfMileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
-                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) ft \(($0 % 60)) in"})
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) min \(($0 % 60)) sec"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
             }
