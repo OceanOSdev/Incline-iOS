@@ -166,9 +166,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             doneWeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
-            
             txtWeight.keyboardType = UIKeyboardType.NumberPad
             txtWeight.inputAccessoryView = toolBar
+            
+            txtWeight.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
 
         }
         else if textField == txtBodyFat {
@@ -190,27 +192,28 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             txtBodyFat.keyboardType = UIKeyboardType.NumberPad
             txtBodyFat.inputAccessoryView = toolBar
+            
+            txtBodyFat.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
         }
         
     }
     
     
-    //TextField text inside changed delegate method
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textDidChange(textField: UITextField) {
         
         if textField == txtWeight {
             
-            doneWeightButton.enabled = true
+            doneWeightButton.enabled = !txtWeight.text!.isEmpty
         }
         else if textField == txtBodyFat {
             
-            doneBodyFatButton.enabled = true
+            doneBodyFatButton.enabled = !txtBodyFat.text!.isEmpty
         }
         
-        return true
     }
-    
+
     
     //Height Done Method
     
@@ -270,7 +273,6 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let pounds = Int(txtWeight.text!)
         
-        
         WebApiConnector.Post("WeightApi", data: ["weight":pounds!]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
             let urlResponse = dataTask.response as? NSHTTPURLResponse
@@ -290,12 +292,6 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
-
-        
-        /*let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)*/
         
         txtWeight.text = ""
     }

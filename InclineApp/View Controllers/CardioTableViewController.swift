@@ -221,6 +221,9 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             txtPacer.keyboardType = UIKeyboardType.NumberPad
             txtPacer.inputAccessoryView = toolBar
+            
+            txtPacer.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
         }
         else if textField == txtStepTest {
             
@@ -241,6 +244,9 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             txtStepTest.keyboardType = UIKeyboardType.NumberPad
             txtStepTest.inputAccessoryView = toolBar
+            
+            txtStepTest.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
         }
         else if textField == txtHeartStepTest {
             
@@ -261,28 +267,29 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             txtHeartStepTest.keyboardType = UIKeyboardType.NumberPad
             txtHeartStepTest.inputAccessoryView = toolBar
+            
+            txtHeartStepTest.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
         }
     }
     
     //TextField text inside changed delegate method
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textDidChange(textField: UITextField) {
         
         if textField == txtPacer {
             
-            donePacerButton.enabled = true
-            
+            donePacerButton.enabled = !txtPacer.text!.isEmpty
         }
         else if textField == txtStepTest {
             
-            doneStepsButton.enabled = true
+            doneStepsButton.enabled = !txtStepTest.text!.isEmpty
         }
         else if textField == txtHeartStepTest {
             
-            doneHeartButton.enabled = true
+            doneHeartButton.enabled = !txtHeartStepTest.text!.isEmpty
         }
         
-        return true
     }
     
     
@@ -439,10 +446,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
-
         
         txtStepTest.text = ""
-
         
     }
     
@@ -597,12 +602,6 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             tableVC.totalValuesDest = arrayToPass
         }
         
-        
-        
-        
     }
-    
-
-
     
 }
