@@ -33,7 +33,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         }
         else {
             segueID = "showHeightHistory"
-            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show height history")
         }
         
@@ -46,7 +46,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         }
         else {
             segueID = "showWeightHistory"
-            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show weight history")
         }
 
@@ -59,7 +59,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         }
         else {
             segueID = "showBodyFatHistory"
-            performSegueWithIdentifier("showHistory", sender: totalHeightValues)
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show body fat history")
         }
     }
@@ -74,9 +74,9 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     var item1 = String()
     var item2 = String()
     
-    var totalHeightValues: [Int] = []
-    var totalWeightValues: [Int] = []
-    var totalBodyFatValues: [Int] = []
+    var totalValuesToPass: [Int] = []
+    //var totalWeightValues: [Int] = []
+    //var totalBodyFatValues: [Int] = []
     
     var segueID = String()
     
@@ -231,7 +231,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
 
         WebApiConnector.Post("HeightApi", data: ["height":totalInches]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
-            var urlResponse = dataTask.response as? NSHTTPURLResponse
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
 
             var alertController : UIAlertController
 
@@ -271,14 +271,31 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         let pounds = Int(txtWeight.text!)
         
         
-        totalWeightValues.append(pounds!)
+        WebApiConnector.Post("WeightApi", data: ["weight":pounds!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+
         
-        print(totalWeightValues)
-        
-        let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+        /*let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentViewController(alertController, animated: true, completion: nil)*/
         
         txtWeight.text = ""
     }
@@ -301,16 +318,27 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let bodyFat = Int(txtBodyFat.text!)
         
-        totalBodyFatValues.append(bodyFat!)
-        
-        print(totalBodyFatValues)
+        WebApiConnector.Post("PercentBodyFatApi", data: ["bodyFat":bodyFat!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(bodyFat!) %", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
         txtBodyFat.text = ""
-        
-        let alertController = UIAlertController(title: "\(bodyFat!) %", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     //BodyFat Cancel Method
@@ -367,7 +395,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         switch segueID {
         case "showHeightHistory":
             // Creates the request
-            let requestThing = WebApiConnector.Get("HeightApi") {
+            _ = WebApiConnector.Get("HeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("height", dict: json!) // extract only the values with the key "height" and put them into an array.
                     arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
@@ -377,7 +405,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
 
         case "showWeightHistory":
 
-            let requestThing = WebApiConnector.Get("WeightApi") {
+            _ = WebApiConnector.Get("WeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
@@ -386,7 +414,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             }
 
         case "showBodyFatHistory":
-            let requestThing = WebApiConnector.Get("PercentBodyFatApi") {
+            _ = WebApiConnector.Get("PercentBodyFatApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})

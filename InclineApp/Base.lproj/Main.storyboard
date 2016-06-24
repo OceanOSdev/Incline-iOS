@@ -180,13 +180,13 @@
         <scene sceneID="iK6-MO-dwd">
             <objects>
                 <tableViewController title="Reports" id="IAH-Oq-syt" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tgu-nQ-x2R">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tgu-nQ-x2R">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YJu-Gb-CfU">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YJu-Gb-CfU">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJu-Gb-CfU" id="UfN-KO-raz">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -194,6 +194,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="IAH-Oq-syt" id="wev-1h-1CO"/>
                             <outlet property="delegate" destination="IAH-Oq-syt" id="e2t-nP-iqx"/>
@@ -1165,7 +1166,7 @@
                         <outlet property="txtMileRun" destination="6Of-EY-WKE" id="Vt2-Xm-RgY"/>
                         <outlet property="txtPacer" destination="yuN-00-ixI" id="C1h-fA-wmu"/>
                         <outlet property="txtStepTest" destination="rpO-Pp-vhS" id="WJZ-N5-ycy"/>
-                        <segue destination="yTZ-oc-pGF" kind="presentation" id="fw6-N1-ceu"/>
+                        <segue destination="yTZ-oc-pGF" kind="presentation" identifier="showHistory" id="fw6-N1-ceu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEq-Td-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1832,9 +1833,9 @@
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eca-Ze-Vef"/>
-        <segue reference="9Qy-qW-M55"/>
+        <segue reference="zQb-BK-fTR"/>
         <segue reference="fw6-N1-ceu"/>
+        <segue reference="9Qy-qW-M55"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

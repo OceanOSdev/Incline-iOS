@@ -34,6 +34,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             txtMileRun.becomeFirstResponder()
         }
         else {
+            segueID = "showMileRun"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show History")
         }
         
@@ -45,6 +47,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             txtHalfMileRun.becomeFirstResponder()
         }
         else {
+            segueID = "showHalfMileRun"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show History")
         }
     }
@@ -55,6 +59,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             txtPacer.becomeFirstResponder()
         }
         else {
+            segueID = "showPacer"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show History")
         }
     }
@@ -65,6 +71,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             txtStepTest.becomeFirstResponder()
         }
         else {
+            segueID = "showStepTest"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show History")
         }
     }
@@ -75,6 +83,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             txtHeartStepTest.becomeFirstResponder()
         }
         else {
+            segueID = "showHeartStepTest"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
             print("show History")
         }
     }
@@ -92,11 +102,10 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     var halfmileRunItem1 = String()
     var halfmileRunItem2 = String()
     
-    var totalMileRunTimeValue: [Int] = []
-    var totalHalfMileRunTimeValue: [Int] = []
-    var totalPacerLapsValue: [Int] = []
-    var totalStepTestStepsValue: [Int] = []
-    var totalStepTestHeartValue: [Int] = []
+    var totalValuesToPass: [Int] = []
+    
+    
+    var segueID = String()
     
     let doneMileRunButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneMileRun))
     
@@ -275,7 +284,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         return true
     }
-
+    
     
     //Time Done Method
 
@@ -286,18 +295,28 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         let minutes = Int(mileRunItem1.componentsSeparatedByString(" ")[0])!
         let seconds = Int(mileRunItem2.componentsSeparatedByString(" ")[0])!
         
-        let alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        let totalSeconds = (minutes * 60) + seconds
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("MileTimeApi", data: ["mileTime":totalSeconds]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
 
-        
-        let totalMinutes = (minutes * 60) + seconds
-        
-        totalMileRunTimeValue.append(totalMinutes)
-        
-        print(totalMileRunTimeValue)
-        
         txtMileRun.text = ""
         
     }
@@ -321,16 +340,27 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         let minutes = Int(halfmileRunItem1.componentsSeparatedByString(" ")[0])!
         let seconds = Int(halfmileRunItem2.componentsSeparatedByString(" ")[0])!
         
-        let alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
         let totalMinutes = (minutes * 60) + seconds
         
-        totalHalfMileRunTimeValue.append(totalMinutes)
-        
-        print(totalHalfMileRunTimeValue)
+        WebApiConnector.Post("HalfMileTimeApi", data: ["halfMileTime":totalMinutes]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(minutes) min" + " " + "\(seconds) sec", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
         txtHalfMileRun.text = ""
         
@@ -352,14 +382,26 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let laps = Int(txtPacer.text!)
         
-        totalPacerLapsValue.append(laps!)
-        
-        print(totalPacerLapsValue)
-        
-        let alertController = UIAlertController(title: "\(laps!) laps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("PacerApi", data: ["pacer":laps!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(laps!) laps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+
         
         txtPacer.text = ""
         
@@ -379,14 +421,26 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let steps = Int(txtStepTest.text!)
         
-        totalStepTestStepsValue.append(steps!)
-        
-        print(totalStepTestStepsValue)
-        
-        let alertController = UIAlertController(title: "\(steps!) steps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("StepTestApi", data: ["stepTestSteps":steps!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(steps!) steps", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
+
         
         txtStepTest.text = ""
 
@@ -405,10 +459,6 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         txtHeartStepTest.resignFirstResponder()
         
         let bpm = Int(txtHeartStepTest.text!)
-        
-        totalStepTestHeartValue.append(bpm!)
-        
-        print(totalStepTestHeartValue)
         
         let alertController = UIAlertController(title: "\(bpm!) bpm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
@@ -470,6 +520,77 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let navVC = segue.destinationViewController as! UINavigationController
+        
+        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        
+        var arrayToPass: [String] = []
+        var JSONDictToArrayResult: [AnyObject]? = []
+        switch segueID {
+            
+        case "showMileRun":
+            // Creates the request
+            _ = WebApiConnector.Get("MileTimeApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!) // extract only the values with the key "height" and put them into an array.
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) ft \(($0 % 60)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
+                tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
+                tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+            }
+            
+        case "showHalfMileRun":
+            _ = WebApiConnector.Get("HalfMileTimeApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 60)) ft \(($0 % 60)) in"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        case "showPacer":
+            
+            _ = WebApiConnector.Get("PacerApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("pacer", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) laps"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        case "showStepTest":
+            _ = WebApiConnector.Get("StepTestApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestSteps", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) steps"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+            
+        /*case "showHeartStepTest":
+            _ = WebApiConnector.Get("PercentBodyFatApi") {
+                (json: [[String:AnyObject]]?) -> Void in
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
+                tableVC.totalValuesDest = arrayToPass
+                tableVC.connectionView.reloadData()
+            }
+        */
+            
+        default:
+            arrayToPass = []
+            tableVC.totalValuesDest = arrayToPass
+        }
+        
+        
+        
+        
+    }
+    
+
 
     
 }
