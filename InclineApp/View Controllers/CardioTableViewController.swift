@@ -459,10 +459,25 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let bpm = Int(txtHeartStepTest.text!)
         
-        let alertController = UIAlertController(title: "\(bpm!) bpm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        WebApiConnector.Post("StepTestApi", data: ["stepTestHeartRate":bpm!]) {
+            (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
+            var alertController : UIAlertController
+            
+            if let _ = urlResponse {
+                if urlResponse?.statusCode < 400 {
+                    alertController = UIAlertController(title: "\(bpm!) bpm", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                else {
+                    alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
+                }
+                
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
         txtHeartStepTest.text = ""
     }
@@ -568,15 +583,14 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.connectionView.reloadData()
             }
             
-        /*case "showHeartStepTest":
-            _ = WebApiConnector.Get("PercentBodyFatApi") {
+        case "showHeartStepTest":
+            _ = WebApiConnector.Get("StepTestApi") {
                 (json: [[String:AnyObject]]?) -> Void in
-                JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
-                arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestHeartRate", dict: json!)
+                arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
             }
-        */
             
         default:
             arrayToPass = []
