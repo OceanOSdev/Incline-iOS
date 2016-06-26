@@ -12,8 +12,10 @@ class ReuseableHistoryTableViewController: UITableViewController {
     }
     
     @IBOutlet var connectionView: UITableView!
+    
     var totalValuesDest: [String] = []
-
+    var dateValuesDest: [String] = []
+    var idValuesDest: [Int] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +41,7 @@ class ReuseableHistoryTableViewController: UITableViewController {
         if totalValuesDest.count > 0 {
             //cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
             cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
+            (cell.contentView.subviews[1] as! UILabel).text = "\(dateValuesDest[indexPath.row])"
         }
         return cell
     }

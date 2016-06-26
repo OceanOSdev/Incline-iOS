@@ -292,7 +292,10 @@ class FlexibilityUITableViewController: UITableViewController {
         let navVC = segue.destinationViewController as! UINavigationController
         
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
-        
+        var TimeToPass: [String] = []
+        var IDToPass: [Int] = []
+        var TimeArray: [AnyObject]? = []
+        var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
         switch segueID {
@@ -302,6 +305,12 @@ class FlexibilityUITableViewController: UITableViewController {
             _ = WebApiConnector.Get("SitAndReachApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("sitAndReach", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) cm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
@@ -311,6 +320,12 @@ class FlexibilityUITableViewController: UITableViewController {
             _ = WebApiConnector.Get("TrunkLiftApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("trunkLift", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
@@ -320,6 +335,12 @@ class FlexibilityUITableViewController: UITableViewController {
             _ = WebApiConnector.Get("ArmAndShoulderApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("armAndShoulder", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.connectionView.reloadData()
