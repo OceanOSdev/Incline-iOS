@@ -37,6 +37,7 @@ class ReuseableHistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         if totalValuesDest.count > 0 {
+            //cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
             cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
         }
         return cell
@@ -50,5 +51,9 @@ class ReuseableHistoryTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
 
         }
+    }
+    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "Delete" //or customize for each indexPath
     }
 }

@@ -32,8 +32,9 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtHeight.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showHeightHistory", sender: totalHeightValues)
-            print("show history")
+            segueID = "showHeightHistory"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show height history")
         }
         
     }
@@ -44,8 +45,9 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtWeight.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showWeightHistory", sender: totalHeightValues)
-            print("show history")
+            segueID = "showWeightHistory"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show weight history")
         }
 
     }
@@ -56,8 +58,9 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             txtBodyFat.becomeFirstResponder()
         }
         else {
-            performSegueWithIdentifier("showBodyFatHistory", sender: totalHeightValues)
-            print("show history")
+            segueID = "showBodyFatHistory"
+            performSegueWithIdentifier("showHistory", sender: totalValuesToPass)
+            print("show body fat history")
         }
     }
     
@@ -71,12 +74,19 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     var item1 = String()
     var item2 = String()
     
-    var totalHeightValues: [Int] = []
-    var totalWeightValues: [Int] = []
-    var totalBodyFatValues: [Int] = []
+    var totalValuesToPass: [Int] = []
+    //var totalWeightValues: [Int] = []
+    //var totalBodyFatValues: [Int] = []
     
+    var segueID = String()
     
+    //Add button for UIPickerView
+    var doneHeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
     
+    let doneWeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
+    
+    let doneBodyFatButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
+
     //View did load shit here
     
     override func viewDidLoad() {
@@ -112,6 +122,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         if textField == txtHeight {
             
+            txtWeight.text = ""
+            
             let heightPicker: UIPickerView = UIPickerView()
             
             heightPicker.delegate = self
@@ -124,11 +136,12 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             toolBar.translucent = true
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.donePicker))
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelPicker))
             
-            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelHeightPicker))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneHeightButton], animated: false)
+            doneHeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
             txtHeight.inputView = heightPicker
@@ -138,44 +151,73 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         }
         else if textField == txtWeight {
             
+            txtWeight.text = ""
+            
             let toolBar = UIToolbar()
             toolBar.barStyle = UIBarStyle.Default
             toolBar.translucent = true
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.doneWeight))
+            
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelWeight))
             
-            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.setItems([cancelButton, spaceButton, doneWeightButton], animated: false)
+            doneWeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
-            txtWeight.inputAccessoryView = toolBar
             txtWeight.keyboardType = UIKeyboardType.NumberPad
+            txtWeight.inputAccessoryView = toolBar
+            
+            txtWeight.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
 
         }
         else if textField == txtBodyFat {
             
+            txtWeight.text = ""
+            
             let toolBar = UIToolbar()
             toolBar.barStyle = UIBarStyle.Default
             toolBar.translucent = true
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.doneBodyFat))
+            
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelBodyFat))
             
-            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.setItems([cancelButton, spaceButton, doneBodyFatButton], animated: false)
+            doneBodyFatButton.enabled = false
             toolBar.userInteractionEnabled = true
             
+            txtBodyFat.keyboardType = UIKeyboardType.NumberPad
             txtBodyFat.inputAccessoryView = toolBar
+            
+            txtBodyFat.addTarget(self, action: #selector(textDidChange), forControlEvents: .EditingChanged)
+
         }
         
     }
     
+    
+    
+    func textDidChange(textField: UITextField) {
+        
+        if textField == txtWeight {
+            
+            doneWeightButton.enabled = !txtWeight.text!.isEmpty
+        }
+        else if textField == txtBodyFat {
+            
+            doneBodyFatButton.enabled = !txtBodyFat.text!.isEmpty
+        }
+        
+    }
+
+    
     //Height Done Method
     
-    func donePicker() {
+    func doneHeightPicker() {
         
         txtHeight.resignFirstResponder()
         
@@ -186,11 +228,13 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let totalInches = feet + inches
         
-        txtHeight.text = ""
+        //totalHeightValues.append(totalInches)
+        
+        //print(totalHeightValues)
 
         WebApiConnector.Post("HeightApi", data: ["height":totalInches]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
-            var urlResponse = dataTask.response as? NSHTTPURLResponse
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
 
             var alertController : UIAlertController
 
@@ -207,11 +251,13 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
+        
+        txtHeight.text = ""
     }
     
     //Height Cancel Method
     
-    func cancelPicker() {
+    func cancelHeightPicker() {
         
         txtHeight.text = ""
         
@@ -227,15 +273,12 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let pounds = Int(txtWeight.text!)
         
-
-        
-        txtWeight.text = ""
-        WebApiConnector.Post("WeightApi", data:["weight":pounds!]) {
+        WebApiConnector.Post("WeightApi", data: ["weight":pounds!]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
-            var urlResponse = dataTask.response as? NSHTTPURLResponse
-
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
             var alertController : UIAlertController
-
+            
             if let _ = urlResponse {
                 if urlResponse?.statusCode < 400 {
                     alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
@@ -243,26 +286,24 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 else {
                     alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
                 }
-
+                
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-
+                
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
         
-        /*let alertController = UIAlertController(title: "\(pounds!) lbs", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)*/
+        txtWeight.text = ""
     }
     
     //Weight Cancel Method
     
     func cancelWeight() {
         
+        txtWeight.text = ""
+        
         txtWeight.resignFirstResponder()
         
-        txtHeight.text = ""
     }
     
     //BodyFat Done Method
@@ -273,18 +314,12 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let bodyFat = Int(txtBodyFat.text!)
         
-        //totalBodyFatValues.append(bodyFat!)
-        
-        //print(totalBodyFatValues)
-        
-        txtBodyFat.text = ""
-
-        WebApiConnector.Post("PercentBodyFatApi", data:["bodyFat":bodyFat!]) {
+        WebApiConnector.Post("PercentBodyFatApi", data: ["bodyFat":bodyFat!]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
-            var urlResponse = dataTask.response as? NSHTTPURLResponse
-
+            let urlResponse = dataTask.response as? NSHTTPURLResponse
+            
             var alertController : UIAlertController
-
+            
             if let _ = urlResponse {
                 if urlResponse?.statusCode < 400 {
                     alertController = UIAlertController(title: "\(bodyFat!) %", message: "Entry Sucessfully Added", preferredStyle: UIAlertControllerStyle.Alert)
@@ -292,13 +327,14 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 else {
                     alertController = UIAlertController(title: "\(urlResponse?.statusCode) Error", message: "You could try logging in?", preferredStyle: UIAlertControllerStyle.Alert)
                 }
-
+                
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-
+                
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
-
+        
+        txtBodyFat.text = ""
     }
     
     //BodyFat Cancel Method
@@ -309,8 +345,6 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         txtBodyFat.text = ""
     }
-    
-    
     
     //UIPickerView Delegate methods here
     
@@ -336,6 +370,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        doneHeightButton.enabled = true
+        
         item1 = heightValues[0][pickerView.selectedRowInComponent(0)]
         item2 = heightValues[1][pickerView.selectedRowInComponent(1)]
         
@@ -352,10 +388,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
-        switch segue.identifier! {
+        switch segueID {
         case "showHeightHistory":
             // Creates the request
-            let requestThing = WebApiConnector.Get("HeightApi") {
+            _ = WebApiConnector.Get("HeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("height", dict: json!) // extract only the values with the key "height" and put them into an array.
                     arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
@@ -365,7 +401,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
 
         case "showWeightHistory":
 
-            let requestThing = WebApiConnector.Get("WeightApi") {
+            _ = WebApiConnector.Get("WeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
@@ -374,7 +410,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             }
 
         case "showBodyFatHistory":
-            let requestThing = WebApiConnector.Get("PercentBodyFatApi") {
+            _ = WebApiConnector.Get("PercentBodyFatApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})

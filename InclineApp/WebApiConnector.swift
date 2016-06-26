@@ -6,6 +6,7 @@
 import Foundation
 
 class WebApiConnector {
+    
     static var authContext: ADAuthenticationContext? = nil
 
     static func getToken(clearCache: Bool, parent: UIViewController, completionHandler: (result:String?, error:NSError?) -> Void) {
@@ -34,10 +35,10 @@ class WebApiConnector {
         authContext?.tokenCacheStore.removeAllWithError(err)
 
         // Enable this if you want to clear all of the cookies currently stored.
-        /*var storage : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        let storage : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         for cookie in storage.cookies! {
             storage.deleteCookie(cookie)
-        }*/
+        }
         authContext = nil
     }
 
@@ -59,9 +60,9 @@ class WebApiConnector {
     }
 
     static func Get(apiUrl:String, completion:(json: [[String:AnyObject]]?) -> Void) {
-        var request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string:  ApplicationData.baseApiAddress + apiUrl)!)
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string:  ApplicationData.baseApiAddress + apiUrl)!)
 
-        let authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
         request.addValue(authHeader, forHTTPHeaderField: "Authorization")
         let queue : NSOperationQueue = NSOperationQueue()
         var ret : [[String:AnyObject]]?
@@ -72,8 +73,6 @@ class WebApiConnector {
                     //print("Asynchronous\(jsonResult)")
                     completion(json: jsonResult)
                 }
-
-
                 print("Success")
             } catch let error as NSError {
                 print(error.localizedDescription)

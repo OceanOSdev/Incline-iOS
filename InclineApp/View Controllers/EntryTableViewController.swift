@@ -9,9 +9,14 @@
 import UIKit
 
 class EntryTableViewController: UITableViewController {
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -23,25 +28,21 @@ class EntryTableViewController: UITableViewController {
                 print(result)
             }
             else {
-
+                
             }
         }
 
+
     }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+    
+    //Table data source not needed if not data is being used in the table
 
 }

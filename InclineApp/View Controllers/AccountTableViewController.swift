@@ -11,7 +11,6 @@ import UIKit
 class AccountTableViewController: UITableViewController {
 
     @IBAction func btnExit(sender: AnyObject) {
-       
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -20,6 +19,7 @@ class AccountTableViewController: UITableViewController {
     // Desc: Handles the logout logic for the application
     @IBAction func btnLogOut(sender: AnyObject) {
         //TODO: Handle invalid state that will inevitably be passed around the application during runtime
+        
         WebApiConnector.logOut()
 
         let alertController = UIAlertController(title: "Log Out Successful", message: "Warning: Application may be unstable until next sign in.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -28,23 +28,6 @@ class AccountTableViewController: UITableViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var togHide: UISwitch!
-    
-    
-    @IBOutlet weak var txtPassword: UITextField!
-
-    
-    @IBAction func togChanged(sender: UISwitch) {
-        
-        if togHide.on {
-            txtPassword.secureTextEntry = true
-        }
-        else
-        {
-            txtPassword.secureTextEntry = false
-        }
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
