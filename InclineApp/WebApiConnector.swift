@@ -98,5 +98,59 @@ class WebApiConnector {
         }
 
     }
+    
+    
+    static func QueryGraph(query: String, completion: (json: [String:AnyObject]?) -> Void) {
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: "https://graph.windows.net/me/\(query)?api-version=1.6")!)
+        
+        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        request.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        let queue : NSOperationQueue = NSOperationQueue()
+        var ret : [[String:AnyObject]]?
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            do {
+                
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject] {
+                    print("Asynchronous\(jsonResult)")
+                    completion(json: jsonResult)
+                    //completion(task: task, httpResponse: response)
+                }
+                print("Success")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(json: nil)
+            } catch {
+                completion(json: nil)
+            }
+        })
+
+    }
+    
+    static func QueryGraph(completion: (json: [String:AnyObject]?) -> Void) {
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: "https://graph.windows.net/me?api-version=1.6")!)
+        
+        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        request.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        let queue : NSOperationQueue = NSOperationQueue()
+        var ret : [[String:AnyObject]]?
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            do {
+                
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject] {
+                    print("Asynchronous\(jsonResult)")
+                    completion(json: jsonResult)
+                    //completion(task: task, httpResponse: response)
+                }
+                print("Success")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(json: nil)
+            } catch {
+                completion(json: nil)
+            }
+        })
+        
+    }
+
 
 }

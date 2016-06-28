@@ -329,6 +329,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="NameField" destination="vGy-ti-kQl" id="2Ur-fD-HF2"/>
+                        <outlet property="emailField" destination="VYo-Nl-MfS" id="k93-Ck-R9j"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXj-1w-0KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
