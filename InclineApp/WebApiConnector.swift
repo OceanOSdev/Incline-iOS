@@ -50,6 +50,7 @@ class WebApiConnector {
         for cookie in storage.cookies! {
             storage.deleteCookie(cookie)
         }
+        ApplicationData.userItem.accessToken = nil
         authContext = nil
         
     }

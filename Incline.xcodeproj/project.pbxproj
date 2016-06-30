@@ -73,6 +73,7 @@
 		175AB02FDBD436D300BC314C /* libPods-Incline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Incline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthAndEnduranceTableViewController.swift; sourceTree = "<group>"; };
 		7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibilityUITableViewController.swift; sourceTree = "<group>"; };
+		70A2D4E71D25C1720069774A /* Incline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Incline.entitlements; sourceTree = "<group>"; };
 		70F446761CFE891B00203756 /* Incline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Incline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F446791CFE891B00203756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70F446801CFE891B00203756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		70F4466D1CFE891B00203756 = {
 			isa = PBXGroup;
 			children = (
+				70A2D4E71D25C1720069774A /* Incline.entitlements */,
 				70F446A91CFE908E00203756 /* System Icons */,
 				70F446781CFE891B00203756 /* InclineApp */,
 				70F4468F1CFE891B00203756 /* InclineAppTests */,
@@ -348,7 +350,12 @@
 				TargetAttributes = {
 					70F446751CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 653PQSQX4V;
+						DevelopmentTeam = W4HA2Z78J5;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					70F4468B1CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
@@ -683,9 +690,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Incline.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;
@@ -701,9 +710,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Incline.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;

@@ -19,7 +19,12 @@ class ReuseableHistoryTableViewController: UITableViewController {
     var apiURL : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.connectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

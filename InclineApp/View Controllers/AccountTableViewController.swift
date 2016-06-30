@@ -17,6 +17,7 @@ class AccountTableViewController: UITableViewController {
 
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
     // Author: Thomas Maloney
     // Desc: Handles the logout logic for the application
     @IBAction func btnLogOut(sender: AnyObject) {
@@ -40,10 +41,14 @@ class AccountTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        WebApiConnector.authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+        
+        WebApiConnector.authContext?.acquireTokenWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
             (result: ADAuthenticationResult!) -> Void in
+            dispatch_async(dispatch_get_global_queue(self.priority, 0)) {
+            
             if (result.accessToken != nil) {
                 //ApplicationData.graphToken = result.accessToken
+                print(result)
                 let manager = AFHTTPSessionManager()
                 manager.responseSerializer = AFJSONResponseSerializer()
                 manager.requestSerializer = AFJSONRequestSerializer()
@@ -56,14 +61,21 @@ class AccountTableViewController: UITableViewController {
                     let firstName = (responseDict["givenName"] as AnyObject?) as? String
                     let lastName = (responseDict["surname"] as AnyObject?) as? String
                     let email = (responseDict["mail"] as AnyObject?) as? String
-                    self.NameField.text = "\(firstName!) \(lastName!)"
-                    self.emailField.text = email!
-                    //print("\(token!) \(responseDict["surname"]!)")
+                    dispatch_async(dispatch_get_main_queue()) {
+
+                        self.NameField.text = "\(firstName!) \(lastName!)"
+                        self.emailField.text = email!
+                    }
+                    print("\(firstName!) \(responseDict["surname"]!)")
                 }) { (operation:NSURLSessionDataTask?, error:NSError) in
                     print(error)
                 }
-
+                
             }
+            else {
+                print(result.status)
+            }
+        }
         }
         
         //NameField.text = ApplicationData.Name

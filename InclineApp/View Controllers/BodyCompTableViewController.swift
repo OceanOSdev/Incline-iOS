@@ -392,22 +392,33 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         var JSONDictToArrayResult: [AnyObject]? = []
         var TimeArray: [AnyObject]? = []
         var IDArray: [AnyObject]? = []
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+
         switch segueID {
         case "showHeightHistory":
             // Creates the request
             _ = WebApiConnector.Get("HeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    // do some task
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("height", dict: json!) // extract only the values with the key "height" and put them into an array.
-                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
-                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
-                TimeToPass = JSONParser.getTimes(TimeArray)
-                IDToPass = IDArray!.map({$0 as! Int})
-                tableVC.idValuesDest = IDToPass
-                tableVC.dateValuesDest = TimeToPass
-                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
-                tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
-                tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
-                tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+                    TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                    IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                    TimeToPass = JSONParser.getTimes(TimeArray)
+                    IDToPass = IDArray!.map({$0 as! Int})
+                    tableVC.idValuesDest = IDToPass
+                    tableVC.dateValuesDest = TimeToPass
+                    arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
+                    tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
+                    tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // update some UI
+                        tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+
+                    }
+                }
+                //tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
             }
 
         case "showWeightHistory":
