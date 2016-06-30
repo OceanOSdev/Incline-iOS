@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA9DBF816BE06EEC20662ED71D4948AB"
-               BlueprintName = "Pods-Incline"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Incline.a">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '6702277C6170F816E3A476B45F0D105C'
+               BlueprintName = 'Pods-Incline'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'libPods-Incline.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
