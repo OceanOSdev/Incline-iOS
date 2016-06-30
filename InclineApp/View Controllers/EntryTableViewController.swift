@@ -11,7 +11,6 @@ import UIKit
 class EntryTableViewController: UITableViewController {
     
  
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +35,7 @@ class EntryTableViewController: UITableViewController {
         
 
     }
- 
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

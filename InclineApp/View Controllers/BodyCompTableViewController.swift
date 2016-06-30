@@ -86,11 +86,17 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     let doneWeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
     
     let doneBodyFatButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
+    
+    //Acticity Indicator
+    
+    //let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
 
     //View did load shit here
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //activityView.color = UIColor.darkGrayColor()
         
         for i in 1...12 {
             
@@ -221,6 +227,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         txtHeight.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+        
         var feet = Int(item1.componentsSeparatedByString(" ")[0])!
         let inches = Int(item2.componentsSeparatedByString(" ")[0])!
         
@@ -247,6 +255,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -414,8 +424,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
                     dispatch_async(dispatch_get_main_queue()) {
                         // update some UI
+                        tableVC.activityView.stopAnimating()
                         tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
-
                     }
                 }
                 //tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
@@ -425,7 +435,9 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
 
             _ = WebApiConnector.Get("WeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
-                    JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
                     TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                     IDArray = JSONParser.DictionaryToArray("id", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
@@ -436,7 +448,12 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.dateValuesDest = TimeToPass
                     tableVC.totalValuesDest = arrayToPass
                     tableVC.apiURL = "WeightApi"
-                    tableVC.connectionView.reloadData()
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.activityView.stopAnimating()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
 
         case "showBodyFatHistory":

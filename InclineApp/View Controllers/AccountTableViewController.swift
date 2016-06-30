@@ -25,12 +25,16 @@ class AccountTableViewController: UITableViewController {
         
         WebApiConnector.logOut()
 
-        let alertController = UIAlertController(title: "Log Out Successful", message: "Warning: Application may be unstable until next sign in.", preferredStyle: UIAlertControllerStyle.Alert)
+        /*let alertController = UIAlertController(title: "Log Out Successful", message: "Warning: Application may be unstable until next sign in.", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
 
         self.presentViewController(alertController, animated: true, completion: nil)
+        */
+        
         emailField.text = "Not Signed In"
         NameField.text = "Not Signed In"
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
