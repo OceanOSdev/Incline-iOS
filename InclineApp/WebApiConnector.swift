@@ -23,18 +23,26 @@ class WebApiConnector {
             (result: ADAuthenticationResult!) -> Void in
             if (result.accessToken != nil) {
                 ApplicationData.userItem.accessToken = result.accessToken
-                completionHandler(result: result.accessToken, error: nil)
+                authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+                    (result: ADAuthenticationResult!) -> Void in
+                    if (result.accessToken != nil) {
+                        ApplicationData.graphToken = result.accessToken
+                        completionHandler(result: result.accessToken, error: nil)
+                    }
+                }
+
+                
             } else {
                 completionHandler(result: nil, error: result.error)
             }
         }
         
-        authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+        /*authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
             (result: ADAuthenticationResult!) -> Void in
             if (result.accessToken != nil) {
                 ApplicationData.graphToken = result.accessToken
             }
-        }
+        }*/
 
     }
 
