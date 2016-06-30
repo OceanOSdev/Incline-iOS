@@ -8,7 +8,7 @@
 
 import UIKit
 
-//fuck nigs
+//nice message here
 
 class EntryTableViewController: UITableViewController {
     
