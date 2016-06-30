@@ -593,7 +593,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         let navVC = segue.destinationViewController as! UINavigationController
         
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
-        
+        var TimeToPass: [String] = []
+        var IDToPass: [Int] = []
+        var TimeArray: [AnyObject]? = []
+        var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
         switch segueID {
@@ -603,8 +606,15 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             _ = WebApiConnector.Get("MaxBenchApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("maxBench", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "MaxBenchApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -612,8 +622,15 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             _ = WebApiConnector.Get("MaxLegPressApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("maxLegPress", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "MaxLegPressApi"
                 tableVC.connectionView.reloadData()
             }
 
@@ -623,16 +640,31 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             _ = WebApiConnector.Get("FlexedArmHangApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("flexedArmHang", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
+                tableVC.apiURL = "FlexedArmHangApi"
                 tableVC.totalValuesDest = arrayToPass
-                tableVC.connectionView.reloadData()             }
+                tableVC.connectionView.reloadData()
+            }
             
         case "showPullUps":
             _ = WebApiConnector.Get("PullUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("pullUps", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "PullUpApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -640,8 +672,15 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             _ = WebApiConnector.Get("RightAnglePushUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("rightAnglePushUps", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "RightAnglePushUpApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -649,8 +688,15 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             _ = WebApiConnector.Get("CurlUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("curlUps", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "CurlUpApi"
                 tableVC.connectionView.reloadData()
             }
             

@@ -387,16 +387,27 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
         
         var arrayToPass: [String] = []
+        var TimeToPass: [String] = []
+        var IDToPass: [Int] = []
         var JSONDictToArrayResult: [AnyObject]? = []
+        var TimeArray: [AnyObject]? = []
+        var IDArray: [AnyObject]? = []
         switch segueID {
         case "showHeightHistory":
             // Creates the request
             _ = WebApiConnector.Get("HeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("height", dict: json!) // extract only the values with the key "height" and put them into an array.
-                    arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
-                    tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
-                    tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
+                tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
+                tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
+                tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
             }
 
         case "showWeightHistory":
@@ -404,8 +415,16 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             _ = WebApiConnector.Get("WeightApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("weight", dict: json!)
+                    TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                    IDArray = JSONParser.DictionaryToArray("id", dict: json!)
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
+                    TimeToPass = JSONParser.getTimes(TimeArray)
+                
+                    IDToPass = IDArray!.map({$0 as! Int})
+                    tableVC.idValuesDest = IDToPass
+                    tableVC.dateValuesDest = TimeToPass
                     tableVC.totalValuesDest = arrayToPass
+                    tableVC.apiURL = "WeightApi"
                     tableVC.connectionView.reloadData()
             }
 
@@ -413,8 +432,15 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             _ = WebApiConnector.Get("PercentBodyFatApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
+                    TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                    IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                    TimeToPass = JSONParser.getTimes(TimeArray)
+                    IDToPass = IDArray!.map({$0 as! Int})
+                    tableVC.idValuesDest = IDToPass
+                    tableVC.dateValuesDest = TimeToPass
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
                     tableVC.totalValuesDest = arrayToPass
+                    tableVC.apiURL = "PercentBodyFatApi"
                     tableVC.connectionView.reloadData()
             }
 

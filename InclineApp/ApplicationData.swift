@@ -15,4 +15,9 @@ struct ApplicationData {
     static let baseApiAddress : String = "https://incline.azurewebsites.net/api/"
 
     static var userItem : ADTokenCacheStoreItem = ADTokenCacheStoreItem()
+    static var graphToken : String? = nil
+    
+    static var Name : String? = nil
+    static var Email: String? = nil
+    
 }

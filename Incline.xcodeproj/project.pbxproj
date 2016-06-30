@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3708FD619B8F60D95C7F6907 /* libPods-InclineTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C016DFB7431646E136CE3694 /* libPods-InclineTests.a */; };
 		701B02BB1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */; };
-		7082265B1D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png in Resources */ = {isa = PBXBuildFile; fileRef = 708226591D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png */; };
-		7082265C1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png in Resources */ = {isa = PBXBuildFile; fileRef = 7082265A1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png */; };
 		7082265E1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */; };
 		70F4467A1CFE891B00203756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F446791CFE891B00203756 /* AppDelegate.swift */; };
 		70F446811CFE891B00203756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F4467F1CFE891B00203756 /* Main.storyboard */; };
@@ -74,8 +72,6 @@
 		0FAAE93C77C83B01BDDC95AB /* Pods-InclineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InclineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig"; sourceTree = "<group>"; };
 		175AB02FDBD436D300BC314C /* libPods-Incline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Incline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthAndEnduranceTableViewController.swift; sourceTree = "<group>"; };
-		708226591D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_playlist_add_36pt(Colored).png"; path = "System Icons (Reference)/ic_playlist_add_36pt(Colored).png"; sourceTree = "<group>"; };
-		7082265A1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_playlist_add_36pt@2x(Colored).png"; path = "System Icons (Reference)/ic_playlist_add_36pt@2x(Colored).png"; sourceTree = "<group>"; };
 		7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibilityUITableViewController.swift; sourceTree = "<group>"; };
 		70F446761CFE891B00203756 /* Incline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Incline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F446791CFE891B00203756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -227,8 +223,6 @@
 		70F446A91CFE908E00203756 /* System Icons */ = {
 			isa = PBXGroup;
 			children = (
-				708226591D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png */,
-				7082265A1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png */,
 				70F4472E1CFE99FF00203756 /* ic_fitness_center_36pt.png */,
 				70F4472F1CFE99FF00203756 /* ic_fitness_center_36pt@2x.png */,
 				70F447021CFE911800203756 /* ic_accessibility_36pt.png */,
@@ -354,7 +348,7 @@
 				TargetAttributes = {
 					70F446751CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = W4HA2Z78J5;
+						DevelopmentTeam = 653PQSQX4V;
 					};
 					70F4468B1CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
@@ -399,7 +393,6 @@
 				70F447271CFE911800203756 /* ic_settings_36pt@2x.png in Resources */,
 				70F4471B1CFE911800203756 /* ic_account_circle_36pt@2x.png in Resources */,
 				70F446861CFE891B00203756 /* LaunchScreen.storyboard in Resources */,
-				7082265C1D1B32BA00AE7E5A /* ic_playlist_add_36pt@2x(Colored).png in Resources */,
 				70F4472C1CFE911800203756 /* ic_yogaman_36pt.png in Resources */,
 				70F447291CFE911800203756 /* ic_stars_36pt@2x.png in Resources */,
 				70F447281CFE911800203756 /* ic_stars_36pt.png in Resources */,
@@ -410,7 +403,6 @@
 				70F447201CFE911800203756 /* ic_favorite_36pt.png in Resources */,
 				70F447311CFE99FF00203756 /* ic_fitness_center_36pt@2x.png in Resources */,
 				70F447301CFE99FF00203756 /* ic_fitness_center_36pt.png in Resources */,
-				7082265B1D1B32BA00AE7E5A /* ic_playlist_add_36pt(Colored).png in Resources */,
 				70F4471C1CFE911800203756 /* ic_directions_bike_36pt.png in Resources */,
 				70F446831CFE891B00203756 /* Assets.xcassets in Resources */,
 				70F446811CFE891B00203756 /* Main.storyboard in Resources */,

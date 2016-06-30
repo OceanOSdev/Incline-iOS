@@ -15,6 +15,8 @@ class AccountTableViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBOutlet weak var NameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     // Author: Thomas Maloney
     // Desc: Handles the logout logic for the application
     @IBAction func btnLogOut(sender: AnyObject) {
@@ -26,11 +28,22 @@ class AccountTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
 
         self.presentViewController(alertController, animated: true, completion: nil)
+        emailField.text = "Not Signed In"
+        NameField.text = "Not Signed In"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NameField.text = ApplicationData.Name
+        emailField.text = ApplicationData.Email
+        
+        //emailField.text = "hi"
         
     }
     
