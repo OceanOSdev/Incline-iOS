@@ -6,20 +6,20 @@
       <sourceFolder url="file://$MODULE_DIR$/InclineAppUITests/InclineApp_2ndIteration_UITests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Incline-Bridging-Header.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/WebApiConnector.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
@@ -27,39 +27,26 @@
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-acknowledgements.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-resources.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-dummy.m" isTestSource="false" />
@@ -67,73 +54,119 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS/ADALiOS-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSString+ADHelperMethods.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSURL+ADExtensions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationParameters+Internal.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSURL+ADExtensions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAL.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADClientMetrics.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/UIApplication+ADExtensions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADBrokerKeyHelper.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheValue.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheValue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/UIApplication+ADExtensions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADBrokerKeyHelper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADURLProtocol.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSDictionary+ADExtensions.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWebRequest.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoinConstants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSDictionary+ADExtensions.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWebRequest.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoin.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationWebViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoin.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationWebViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoreKey.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationSettings.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADInstanceDiscovery.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAL_iPhone_Storyboard.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADErrorCodes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADInstanceDiscovery.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADClientMetrics.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/UIAlertView+Additions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationSettings.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/UIAlertView+Additions.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWebRequest.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationSettings.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWebRequest.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADErrorCodes.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADRegistrationInformation.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADRegistrationInformation.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoinUtil.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationOperation.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAL_iPad_Storyboard.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoinUtil.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationError.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationContext.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationOperation.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSString+ADHelperMethods.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWorkPlaceJoinUtil.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationError.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationContext.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeyChainHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADPkeyAuthHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSString+ADHelperMethods.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeyChainHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADPkeyAuthHelper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheValue.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoring.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADURLProtocol.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationParameters.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeychainTokenCacheStore.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADLogger.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheValue.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationParameters.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeychainTokenCacheStore.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADClientMetrics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADNTLMHandler.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADALiOS.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADNTLMHandler.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationBroker.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADALiOS.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationBroker.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationBroker.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADHelpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoreKey.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADUserInformation.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADURLProtocol.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoreKey.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADUserInformation.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADOAuth2Constants.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADNTLMHandler.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADWebResponse.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADOAuth2Constants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoreItem.m" isTestSource="false" />
@@ -141,46 +174,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADHelpers.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoreItem.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADLogger.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADHelpers.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeyChainHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADKeyChainHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADTokenCacheStoring.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult+Internal.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADLogger.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationParameters+Internal.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult+Internal.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADInstanceDiscovery.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-Incline.a">
       <sourceFolder url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Incline-eqznpcgjvwkinbfekdsmegnyjrja/Build/Products/Debug-iphonesimulator/libPods-Incline.a" isTestSource="false" />

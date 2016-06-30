@@ -92,6 +92,20 @@ class WebApiConnector {
         })
 
     }
+    
+    static func Delete(apiUrl:String, data:AnyObject?, completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void)
+    {
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer.setValue("Bearer \(ApplicationData.userItem.accessToken)", forHTTPHeaderField: "Authorization")
+        manager.DELETE(ApplicationData.baseApiAddress + apiUrl, parameters: data, success: { (task:NSURLSessionDataTask, response:AnyObject?) in
+            completion(dataTask: task, httpResponse: response)
+            }, failure: { (operation:NSURLSessionDataTask?, error:NSError) in
+                
+            completion(dataTask: operation!, httpResponse: error)
+        })
+    }
 
     static func Post(apiUrl:String, data:[String:AnyObject], completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void) {
         let dictAsData: NSData = NSKeyedArchiver.archivedDataWithRootObject(data)

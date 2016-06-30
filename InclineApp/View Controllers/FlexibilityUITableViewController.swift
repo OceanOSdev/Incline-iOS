@@ -313,6 +313,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) cm"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "SitAndReachApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -328,6 +329,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "TrunkLiftApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -343,6 +345,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "ArmAndShoulderApi"
                 tableVC.connectionView.reloadData()
             }
             

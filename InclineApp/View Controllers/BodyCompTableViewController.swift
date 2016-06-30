@@ -404,9 +404,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 IDToPass = IDArray!.map({$0 as! Int})
                 tableVC.idValuesDest = IDToPass
                 tableVC.dateValuesDest = TimeToPass
-                    arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
-                    tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
-                    tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+                arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
+                tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
+                tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
+                tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
             }
 
         case "showWeightHistory":
@@ -423,7 +424,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.idValuesDest = IDToPass
                     tableVC.dateValuesDest = TimeToPass
                     tableVC.totalValuesDest = arrayToPass
-                
+                    tableVC.apiURL = "WeightApi"
                     tableVC.connectionView.reloadData()
             }
 
@@ -439,6 +440,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.dateValuesDest = TimeToPass
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
                     tableVC.totalValuesDest = arrayToPass
+                    tableVC.apiURL = "PercentBodyFatApi"
                     tableVC.connectionView.reloadData()
             }
 

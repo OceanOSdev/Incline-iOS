@@ -567,6 +567,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.idValuesDest = IDToPass
                 tableVC.dateValuesDest = TimeToPass
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "MileTimeApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -582,6 +583,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "HalfMileTimeApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -598,6 +600,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) laps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "PacerApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -613,6 +616,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) steps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "StepTestApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -628,6 +632,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "StepTestApi"
                 tableVC.connectionView.reloadData()
             }
             

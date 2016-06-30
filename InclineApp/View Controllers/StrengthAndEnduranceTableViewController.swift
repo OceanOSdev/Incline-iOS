@@ -614,6 +614,7 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "MaxBenchApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -629,6 +630,7 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "MaxLegPressApi"
                 tableVC.connectionView.reloadData()
             }
 
@@ -645,8 +647,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.idValuesDest = IDToPass
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
+                tableVC.apiURL = "FlexedArmHangApi"
                 tableVC.totalValuesDest = arrayToPass
-                tableVC.connectionView.reloadData()             }
+                tableVC.connectionView.reloadData()
+            }
             
         case "showPullUps":
             _ = WebApiConnector.Get("PullUpApi") {
@@ -660,6 +664,7 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "PullUpApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -675,6 +680,7 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "RightAnglePushUpApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -690,6 +696,7 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "CurlUpApi"
                 tableVC.connectionView.reloadData()
             }
             
