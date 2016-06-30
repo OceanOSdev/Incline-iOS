@@ -40,8 +40,34 @@ class AccountTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NameField.text = ApplicationData.Name
-        emailField.text = ApplicationData.Email
+        WebApiConnector.authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+            (result: ADAuthenticationResult!) -> Void in
+            if (result.accessToken != nil) {
+                //ApplicationData.graphToken = result.accessToken
+                let manager = AFHTTPSessionManager()
+                manager.responseSerializer = AFJSONResponseSerializer()
+                manager.requestSerializer = AFJSONRequestSerializer()
+                manager.requestSerializer.setValue("Bearer \(result.accessToken)", forHTTPHeaderField: "Authorization")
+                //manager.dataTaskWithRequest(NSURLRequest().HTTPM, completionHandler: ((NSURLResponse, AnyObject?, NSError?) -> Void)?)
+                
+                manager.GET("https://graph.windows.net/me?api-version=1.6", parameters: nil, success: { (task: NSURLSessionDataTask, response:AnyObject?) in
+                    //print(response)
+                    let responseDict = response as! Dictionary<String, AnyObject>
+                    let firstName = (responseDict["givenName"] as AnyObject?) as? String
+                    let lastName = (responseDict["surname"] as AnyObject?) as? String
+                    let email = (responseDict["mail"] as AnyObject?) as? String
+                    self.NameField.text = "\(firstName!) \(lastName!)"
+                    self.emailField.text = email!
+                    //print("\(token!) \(responseDict["surname"]!)")
+                }) { (operation:NSURLSessionDataTask?, error:NSError) in
+                    print(error)
+                }
+
+            }
+        }
+        
+        //NameField.text = ApplicationData.Name
+        //emailField.text = ApplicationData.Email
         
         //emailField.text = "hi"
         
