@@ -24,10 +24,21 @@ class WebApiConnector {
             if (result.accessToken != nil) {
                 ApplicationData.userItem.accessToken = result.accessToken
                 completionHandler(result: result.accessToken, error: nil)
+                
+
+                
             } else {
                 completionHandler(result: nil, error: result.error)
             }
         }
+        
+        /*authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
+            (result: ADAuthenticationResult!) -> Void in
+            if (result.accessToken != nil) {
+                ApplicationData.graphToken = result.accessToken
+            }
+        }*/
+
     }
 
     static func logOut() {
@@ -39,7 +50,9 @@ class WebApiConnector {
         for cookie in storage.cookies! {
             storage.deleteCookie(cookie)
         }
+        ApplicationData.userItem.accessToken = nil
         authContext = nil
+        
     }
 
     @available(*, deprecated, message = "GET is deprecated, use Get instead")
@@ -83,6 +96,20 @@ class WebApiConnector {
         })
 
     }
+    
+    static func Delete(apiUrl:String, data:AnyObject?, completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void)
+    {
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer.setValue("Bearer \(ApplicationData.userItem.accessToken)", forHTTPHeaderField: "Authorization")
+        manager.DELETE(ApplicationData.baseApiAddress + apiUrl, parameters: data, success: { (task:NSURLSessionDataTask, response:AnyObject?) in
+            completion(dataTask: task, httpResponse: response)
+            }, failure: { (operation:NSURLSessionDataTask?, error:NSError) in
+                
+            completion(dataTask: operation!, httpResponse: error)
+        })
+    }
 
     static func Post(apiUrl:String, data:[String:AnyObject], completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void) {
         let dictAsData: NSData = NSKeyedArchiver.archivedDataWithRootObject(data)
@@ -98,5 +125,58 @@ class WebApiConnector {
         }
 
     }
+    
+    
+    /*tatic func QueryGraph(query: String, completion: (json: [String:AnyObject]?) -> Void) {
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: "https://graph.windows.net/me/\(query)?api-version=1.6")!)
+        
+        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        request.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        let queue : NSOperationQueue = NSOperationQueue()
+        var ret : [[String:AnyObject]]?
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            do {
+                
+                if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String:AnyObject] {
+                    print("Asynchronous\(jsonResult)")
+                    completion(json: jsonResult)
+                    //completion(task: task, httpResponse: response)
+                }
+                print("Success")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+                completion(json: nil)
+            } catch {
+                completion(json: nil)
+            }
+        })
+
+    }
+    
+    static func QueryGraph(completion: (json: [String:AnyObject]?) -> Void) {
+        let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: "https://graph.windows.net/me?api-version=1.6")!)
+        
+        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        request.addValue(authHeader, forHTTPHeaderField: "Authorization")
+        let queue : NSOperationQueue = NSOperationQueue()
+        var ret : [[String:AnyObject]]?
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.requestSerializer.setValue("Bearer \(result.accessToken!)", forHTTPHeaderField: "Authorization")
+        //manager.dataTaskWithRequest(NSURLRequest().HTTPM, completionHandler: ((NSURLResponse, AnyObject?, NSError?) -> Void)?)
+        
+        manager.GET("https://graph.windows.net/me?api-version=1.6", parameters: nil, success: { (task: NSURLSessionDataTask, response:AnyObject?) in
+            print(response)
+            let responseDict = response as! Dictionary<String, AnyObject>
+            var token = responseDict["givenName"]
+            print("\(token!) \(responseDict["surname"]!)")
+        }) { (operation:NSURLSessionDataTask?, error:NSError) in
+            print(error)
+        }
+        
+    }
+ */
+
 
 }

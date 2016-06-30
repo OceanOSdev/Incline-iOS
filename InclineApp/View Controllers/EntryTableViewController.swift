@@ -11,30 +11,31 @@ import UIKit
 class EntryTableViewController: UITableViewController {
     
  
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-    }
+            }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        WebApiConnector.getToken(false, parent: self) {
-            (result: String?, error: NSError?) -> Void in
-            if result != nil {
-                print(result)
+        if ApplicationData.userItem.accessToken == nil {
+            WebApiConnector.getToken(false, parent: self) {
+                (result: String?, error: NSError?) -> Void in
+                if result != nil {
+                    //print(result)
+                    //print(ApplicationData.userItem.accessToken)
+                }
+                else {
+                    
+                }
             }
-            else {
-                
-            }
-        }
 
+        }
+        
 
     }
- 
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

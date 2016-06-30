@@ -546,7 +546,10 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         let navVC = segue.destinationViewController as! UINavigationController
         
         let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
-        
+        var TimeToPass: [String] = []
+        var IDToPass: [Int] = []
+        var TimeArray: [AnyObject]? = []
+        var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
         switch segueID {
@@ -557,15 +560,30 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 tableVC.totalValuesDest = arrayToPass
-                tableVC.connectionView.reloadData()             }
+                tableVC.apiURL = "MileTimeApi"
+                tableVC.connectionView.reloadData()
+            }
             
         case "showHalfMileRun":
             _ = WebApiConnector.Get("HalfMileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("halfMileTime", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "HalfMileTimeApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -574,8 +592,15 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             _ = WebApiConnector.Get("PacerApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("pacer", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) laps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "PacerApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -583,8 +608,15 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             _ = WebApiConnector.Get("StepTestApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestSteps", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) steps"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "StepTestApi"
                 tableVC.connectionView.reloadData()
             }
             
@@ -592,8 +624,15 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             _ = WebApiConnector.Get("StepTestApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestHeartRate", dict: json!)
+                TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
+                IDArray = JSONParser.DictionaryToArray("id", dict: json!)
+                TimeToPass = JSONParser.getTimes(TimeArray)
+                IDToPass = IDArray!.map({$0 as! Int})
+                tableVC.idValuesDest = IDToPass
+                tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
+                tableVC.apiURL = "StepTestApi"
                 tableVC.connectionView.reloadData()
             }
             

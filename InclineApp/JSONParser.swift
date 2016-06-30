@@ -20,6 +20,12 @@ class JSONParser {
 
         return nil
     }
+    
+    static func getTimes(json: [AnyObject]?) -> [String] {
+        let interArray = json!.map({[$0.componentsSeparatedByString("-")[0],$0.componentsSeparatedByString("-")[1],NSString(string: $0.componentsSeparatedByString("-")[2]).substringToIndex(2)]})
+        let ret = interArray.map({"\($0[1])/\($0[2])/\($0[0])"})
+        return ret
+    }
 
     // Takes a dictionary and returns an array of the values from the specified key
     static func DictionaryToArray(key: String, dict: [[String:AnyObject]]?) -> [AnyObject]? {

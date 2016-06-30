@@ -12,11 +12,27 @@ class ReuseableHistoryTableViewController: UITableViewController {
     }
     
     @IBOutlet var connectionView: UITableView!
+    
     var totalValuesDest: [String] = []
+    var dateValuesDest: [String] = []
+    var idValuesDest: [Int] = []
+    var apiURL : String = ""
+    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityView.color = UIColor.darkGrayColor()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        activityView.center = self.view.center
+        
+        activityView.startAnimating()
+        
+        activityView.hidesWhenStopped = true
+        
+        self.view.addSubview(activityView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,12 +55,20 @@ class ReuseableHistoryTableViewController: UITableViewController {
         if totalValuesDest.count > 0 {
             //cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
             cell.textLabel?.text = "\(totalValuesDest[indexPath.row])"
+            (cell.contentView.subviews[1] as! UILabel).text = "\(dateValuesDest[indexPath.row])"
         }
         return cell
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            WebApiConnector.Delete("\(self.apiURL)/\(idValuesDest[indexPath.row])", data: nil, completion: { (dataTask, httpResponse) in
+                self.totalValuesDest.removeAtIndex(indexPath.row)
+                self.dateValuesDest.removeAtIndex(indexPath.row)
+                self.idValuesDest.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.connectionView.reloadData()
+            })
             /*totalValuesDest.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             print(totalValuesDest)*/
