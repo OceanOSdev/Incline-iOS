@@ -28,6 +28,8 @@ class AccountTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
 
         self.presentViewController(alertController, animated: true, completion: nil)
+        emailField.text = "Not Signed In"
+        NameField.text = "Not Signed In"
     }
     
     override func viewDidLoad() {
@@ -38,11 +40,9 @@ class AccountTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        NameField.text = ApplicationData.Name
+        emailField.text = ApplicationData.Email
         
-        WebApiConnector.QueryGraph() { (json) in
-            //TODO
-            print("\(json)")
-        }
         //emailField.text = "hi"
         
     }
