@@ -167,9 +167,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelMileRun))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneMileRunButton], animated: false)
             doneMileRunButton.enabled = false
+            doneMileRunButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtMileRun.inputView = timePicker
@@ -194,9 +197,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelHalfMileRun))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneHalfMileButton], animated: false)
             doneHalfMileButton.enabled = false
+            doneHalfMileButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtHalfMileRun.inputView = timePicker
@@ -214,9 +220,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelPacer))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, donePacerButton], animated: false)
             donePacerButton.enabled = false
+            donePacerButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtPacer.keyboardType = UIKeyboardType.NumberPad
@@ -237,9 +246,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelSteps))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneStepsButton], animated: false)
             doneStepsButton.enabled = false
+            doneStepsButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtStepTest.keyboardType = UIKeyboardType.NumberPad
@@ -260,9 +272,12 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CardioTableViewController.cancelHeart))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneHeartButton], animated: false)
             doneHeartButton.enabled = false
+            doneHeartButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtHeartStepTest.keyboardType = UIKeyboardType.NumberPad
@@ -320,7 +335,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -369,7 +385,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -413,7 +430,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -456,7 +474,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -497,7 +516,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -594,6 +614,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "MileTimeApi"
                     dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }
@@ -616,6 +637,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "HalfMileTimeApi"
                     dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }
@@ -638,6 +660,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "PacerApi"
                     dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }
@@ -659,6 +682,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
                     dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }
@@ -680,6 +704,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
                     dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }

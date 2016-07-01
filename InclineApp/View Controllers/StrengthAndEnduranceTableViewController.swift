@@ -157,9 +157,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelMaxBench))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneMaxBenchButton], animated: false)
             doneMaxBenchButton.enabled = false
+            doneMaxBenchButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtMaxBench.keyboardType = UIKeyboardType.NumberPad
@@ -182,9 +185,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelMaxLegPress))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneMaxLegPressButton], animated: false)
             doneMaxLegPressButton.enabled = false
+            doneMaxLegPressButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtMaxLegPress.keyboardType = UIKeyboardType.NumberPad
@@ -207,9 +213,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelPullUps))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, donePullUpsButton], animated: false)
             donePullUpsButton.enabled = false
+            donePullUpsButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtPullUps.keyboardType = UIKeyboardType.NumberPad
@@ -240,9 +249,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelFlexedArmHang))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneFlexedArmHangButton], animated: false)
             doneFlexedArmHangButton.enabled = false
+            doneFlexedArmHangButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtFlexedArmHang.inputView = timePicker
@@ -262,9 +274,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelRightAnglePushUps))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneRightAnglePushUpsButton], animated: false)
             doneRightAnglePushUpsButton.enabled = false
+            doneRightAnglePushUpsButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtRightAnglePushUps.keyboardType = UIKeyboardType.NumberPad
@@ -287,9 +302,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StrengthAndEnduranceTableViewController.cancelCurlUps))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneCurlUpsButton], animated: false)
             doneCurlUpsButton.enabled = false
+            doneCurlUpsButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             txtCurlUps.keyboardType = UIKeyboardType.NumberPad
@@ -331,6 +349,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtMaxBench.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let pounds = Int(txtMaxBench.text!)
         
         WebApiConnector.Post("MaxBenchApi", data: ["maxBench":pounds!]) {
@@ -348,6 +368,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+                
+                
+                act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -368,6 +392,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtMaxLegPress.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let pounds = Int(txtMaxLegPress.text!)
         
         WebApiConnector.Post("MaxLegPressApi", data: ["maxLegPress":pounds!]) {
@@ -385,6 +411,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+                
+                
+                act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -406,6 +436,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtFlexedArmHang.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+        
         let time = "00:\(item1.componentsSeparatedByString(" ")[0]):\(item2.componentsSeparatedByString(" ")[0]).0000000"
         
         //(hours):(minutes):(seconds).(subseconds)
@@ -425,6 +457,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+                
+                
+                act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -446,6 +482,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtPullUps.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let reps = Int(txtPullUps.text!)
         
         WebApiConnector.Post("PullUpApi", data: ["pullUps":reps!]) {
@@ -463,6 +501,10 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+                
+                
+                act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -483,6 +525,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtRightAnglePushUps.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let reps = Int(txtRightAnglePushUps.text!)
         
         WebApiConnector.Post("RightAnglePushUpApi", data: ["rightAnglePushUps":reps!]) {
@@ -500,7 +544,11 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
                 
+                
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -521,6 +569,8 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         
         txtCurlUps.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let reps = Int(txtCurlUps.text!)
         
         WebApiConnector.Post("CurlUpApi", data: ["curlUps":reps!]) {
@@ -538,7 +588,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
                 
+                
+                act.stopActivityIndicator()
+                
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -599,12 +654,16 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
         var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+
         switch segueID {
             
         case "showMaxBench":
             
             _ = WebApiConnector.Get("MaxBenchApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("maxBench", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -615,12 +674,19 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "MaxBenchApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showMaxLegPress":
             _ = WebApiConnector.Get("MaxLegPressApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("maxLegPress", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -631,14 +697,20 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) lbs"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "MaxLegPressApi"
-                tableVC.connectionView.reloadData()
-            }
+                dispatch_async(dispatch_get_main_queue()) {
 
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
+            }
             
         case "showFlexedArmHang":
             // Creates the request
             _ = WebApiConnector.Get("FlexedArmHangApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("flexedArmHang", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -649,12 +721,19 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.apiURL = "FlexedArmHangApi"
                 tableVC.totalValuesDest = arrayToPass
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showPullUps":
             _ = WebApiConnector.Get("PullUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("pullUps", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -665,12 +744,19 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "PullUpApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showRightAnglePushUps":
             _ = WebApiConnector.Get("RightAnglePushUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("rightAnglePushUps", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -681,12 +767,18 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "RightAnglePushUpApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
-            
         case "showCurlUps":
             _ = WebApiConnector.Get("CurlUpApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("curlUps", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -697,7 +789,12 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) reps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "CurlUpApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         default:

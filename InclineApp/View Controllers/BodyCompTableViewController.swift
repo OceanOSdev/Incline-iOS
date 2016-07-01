@@ -169,8 +169,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelWeight))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneWeightButton], animated: false)
+            doneWeightButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             doneWeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
@@ -193,9 +196,13 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelBodyFat))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneBodyFatButton], animated: false)
+            doneBodyFatButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+            
             doneBodyFatButton.enabled = false
+            
             toolBar.userInteractionEnabled = true
             
             txtBodyFat.keyboardType = UIKeyboardType.NumberPad
@@ -257,6 +264,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
                 
                 act.stopActivityIndicator()
 
@@ -302,7 +310,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -347,7 +356,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 act.stopActivityIndicator()
 
                 self.presentViewController(alertController, animated: true, completion: nil)
