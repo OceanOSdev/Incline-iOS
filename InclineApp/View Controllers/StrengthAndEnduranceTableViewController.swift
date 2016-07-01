@@ -106,17 +106,17 @@ class StrengthAndEnduranceTableViewController: UITableViewController, UIPickerVi
     var item2 = String()
     
     //Add buttons for UIPickerViews
-    var doneFlexedArmHangButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneFlexedArmHang))
+    var doneFlexedArmHangButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneFlexedArmHang))
     
-    let doneMaxBenchButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneMaxBench))
+    let doneMaxBenchButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneMaxBench))
     
-    let doneMaxLegPressButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneMaxLegPress))
+    let doneMaxLegPressButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneMaxLegPress))
     
-    let donePullUpsButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.donePullUps))
+    let donePullUpsButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.donePullUps))
     
-    let doneRightAnglePushUpsButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneRightAnglePushUps))
+    let doneRightAnglePushUpsButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneRightAnglePushUps))
     
-    let doneCurlUpsButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneCurlUps))
+    let doneCurlUpsButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(StrengthAndEnduranceTableViewController.doneCurlUps))
     
     override func viewDidLoad() {
         super.viewDidLoad()

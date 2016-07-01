@@ -81,11 +81,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     var segueID = String()
     
     //Add button for UIPickerView
-    var doneHeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
+    var doneHeightButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
     
-    let doneWeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
+    let doneWeightButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
     
-    let doneBodyFatButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
+    let doneBodyFatButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
     
     //Acticity Indicator
     

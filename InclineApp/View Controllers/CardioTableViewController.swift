@@ -107,15 +107,15 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
     
     var segueID = String()
     
-    let doneMileRunButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneMileRun))
+    let doneMileRunButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneMileRun))
     
-    let doneHalfMileButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHalfMileRun))
+    let doneHalfMileButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHalfMileRun))
     
-    let donePacerButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.donePacer))
+    let donePacerButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.donePacer))
     
-    let doneStepsButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneSteps))
+    let doneStepsButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneSteps))
 
-    let doneHeartButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHeart))
+    let doneHeartButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(CardioTableViewController.doneHeart))
 
     //View did load shit here
     

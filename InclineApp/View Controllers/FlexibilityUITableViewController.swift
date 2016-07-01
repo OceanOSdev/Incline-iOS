@@ -60,11 +60,11 @@ class FlexibilityUITableViewController: UITableViewController {
     
     var segueID = String()
     
-    let doneSitReachButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneSitReach))
+    let doneSitReachButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneSitReach))
     
-    let doneTrunkLiftButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneTrunkLift))
+    let doneTrunkLiftButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneTrunkLift))
     
-    let doneArmShoulderButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneArmShoulder))
+    let doneArmShoulderButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneArmShoulder))
 
     override func viewDidLoad() {
         super.viewDidLoad()
