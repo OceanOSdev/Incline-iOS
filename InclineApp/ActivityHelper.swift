@@ -45,7 +45,7 @@ class ActivityHelper {
         loadingView.center = parentView!.parentViewController!.view.center
         loadingView.backgroundColor = UIColor.whiteColor()//.colorWithAlphaComponent(0.7)
         loadingView.clipsToBounds = true
-        loadingView.layer.cornerRadius = 10
+        loadingView.layer.cornerRadius = 12
         
         activityView.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
         //activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
