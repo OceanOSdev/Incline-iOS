@@ -81,11 +81,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
     var segueID = String()
     
     //Add button for UIPickerView
-    var doneHeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
+    var doneHeightButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneHeightPicker))
     
-    let doneWeightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
+    let doneWeightButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneWeight))
     
-    let doneBodyFatButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
+    let doneBodyFatButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(BodyCompTableViewController.doneBodyFat))
     
     //Acticity Indicator
     
@@ -145,8 +145,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelHeightPicker))
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
             
             toolBar.setItems([cancelButton, spaceButton, doneHeightButton], animated: false)
+            doneHeightButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
             doneHeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
@@ -167,8 +169,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelWeight))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneWeightButton], animated: false)
+            doneWeightButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             doneWeightButton.enabled = false
             toolBar.userInteractionEnabled = true
             
@@ -191,9 +196,13 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(BodyCompTableViewController.cancelBodyFat))
-            
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.setItems([cancelButton, spaceButton, doneBodyFatButton], animated: false)
+            doneBodyFatButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+            
             doneBodyFatButton.enabled = false
+            
             toolBar.userInteractionEnabled = true
             
             txtBodyFat.keyboardType = UIKeyboardType.NumberPad
@@ -255,6 +264,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
                 
                 act.stopActivityIndicator()
 
@@ -281,6 +291,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         txtWeight.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let pounds = Int(txtWeight.text!)
         
         WebApiConnector.Post("WeightApi", data: ["weight":pounds!]) {
@@ -298,7 +310,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -322,6 +337,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         txtBodyFat.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let bodyFat = Int(txtBodyFat.text!)
         
         WebApiConnector.Post("PercentBodyFatApi", data: ["bodyFat":bodyFat!]) {
@@ -339,7 +356,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -403,6 +423,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         var TimeArray: [AnyObject]? = []
         var IDArray: [AnyObject]? = []
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        
 
         switch segueID {
         case "showHeightHistory":
@@ -424,11 +445,10 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
                     dispatch_async(dispatch_get_main_queue()) {
                         // update some UI
-                        tableVC.activityView.stopAnimating()
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
                     }
                 }
-                //tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
             }
 
         case "showWeightHistory":
@@ -450,7 +470,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.apiURL = "WeightApi"
                     
                     dispatch_async(dispatch_get_main_queue()) {
-                        tableVC.activityView.stopAnimating()
+                        tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
                     }
                 }
@@ -459,6 +479,8 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         case "showBodyFatHistory":
             _ = WebApiConnector.Get("PercentBodyFatApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
                     JSONDictToArrayResult = JSONParser.DictionaryToArray("bodyFat", dict: json!)
                     TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                     IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -469,7 +491,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
                     tableVC.totalValuesDest = arrayToPass
                     tableVC.apiURL = "PercentBodyFatApi"
-                    tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
 
         default:

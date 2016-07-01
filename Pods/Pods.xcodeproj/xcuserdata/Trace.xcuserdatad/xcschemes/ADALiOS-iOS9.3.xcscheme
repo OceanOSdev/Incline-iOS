@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "928353533005A4198EBDA5B700D37B64"
-               BlueprintName = "AFNetworking"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libAFNetworking.a">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '023A9D5C0B26BF0303D7680FD8AAFAB2'
+               BlueprintName = 'ADALiOS-iOS9.3'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'libADALiOS-iOS9.3.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

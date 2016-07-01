@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ADALiOS.xcscheme</key>
+		<key>ADALiOS-iOS8.4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>ADALiOS-iOS9.3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AFNetworking-iOS8.4.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AFNetworking-iOS9.3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AF80C497F139BB72BF8875FE8EED29E</key>
+		<key>023A9D5C0B26BF0303D7680FD8AAFAB2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>5489EB5B7AF7C27D023F2506F25E25FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA25098E2F0B9C6DD3389649EBA3F130</key>
+		<key>62E14AB6ACA72D8FBFC1D059F096A54C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA9DBF816BE06EEC20662ED71D4948AB</key>
+		<key>6702277C6170F816E3A476B45F0D105C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B735700AD30144AFFC985403EDA350E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4FFC614655DB3D435142E50E3B1272F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

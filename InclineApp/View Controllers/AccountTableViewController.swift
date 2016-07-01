@@ -18,18 +18,14 @@ class AccountTableViewController: UITableViewController {
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+    var act: ActivityHelper = ActivityHelper()
+
     // Author: Thomas Maloney
     // Desc: Handles the logout logic for the application
     @IBAction func btnLogOut(sender: AnyObject) {
         //TODO: Handle invalid state that will inevitably be passed around the application during runtime
         
         WebApiConnector.logOut()
-
-        /*let alertController = UIAlertController(title: "Log Out Successful", message: "Warning: Application may be unstable until next sign in.", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-
-        self.presentViewController(alertController, animated: true, completion: nil)
-        */
         
         emailField.text = "Not Signed In"
         NameField.text = "Not Signed In"
@@ -40,11 +36,13 @@ class AccountTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        act = ActivityHelper(parentView: self)
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         WebApiConnector.authContext?.acquireTokenWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
             (result: ADAuthenticationResult!) -> Void in
@@ -66,7 +64,7 @@ class AccountTableViewController: UITableViewController {
                     let lastName = (responseDict["surname"] as AnyObject?) as? String
                     let email = (responseDict["mail"] as AnyObject?) as? String
                     dispatch_async(dispatch_get_main_queue()) {
-
+                        self.act.stopActivityIndicator()
                         self.NameField.text = "\(firstName!) \(lastName!)"
                         self.emailField.text = email!
                     }

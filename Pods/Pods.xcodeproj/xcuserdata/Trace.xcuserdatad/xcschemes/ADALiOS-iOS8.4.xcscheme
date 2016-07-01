@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8B735700AD30144AFFC985403EDA350E'
-               BlueprintName = 'Pods-InclineTests'
+               BlueprintIdentifier = '62E14AB6ACA72D8FBFC1D059F096A54C'
+               BlueprintName = 'ADALiOS-iOS8.4'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-InclineTests.a'>
+               BuildableName = 'libADALiOS-iOS8.4.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

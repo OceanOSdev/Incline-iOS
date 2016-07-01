@@ -60,11 +60,11 @@ class FlexibilityUITableViewController: UITableViewController {
     
     var segueID = String()
     
-    let doneSitReachButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneSitReach))
+    let doneSitReachButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneSitReach))
     
-    let doneTrunkLiftButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneTrunkLift))
+    let doneTrunkLiftButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneTrunkLift))
     
-    let doneArmShoulderButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneArmShoulder))
+    let doneArmShoulderButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: UIToolbar(), action: #selector(FlexibilityUITableViewController.doneArmShoulder))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,9 +92,13 @@ class FlexibilityUITableViewController: UITableViewController {
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(FlexibilityUITableViewController.cancelSitReach))
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             
             toolBar.setItems([cancelButton, spaceButton, doneSitReachButton], animated: false)
             doneSitReachButton.enabled = false
+            doneSitReachButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             
@@ -116,9 +120,13 @@ class FlexibilityUITableViewController: UITableViewController {
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(FlexibilityUITableViewController.cancelTrunkLift))
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             
             toolBar.setItems([cancelButton, spaceButton, doneTrunkLiftButton], animated: false)
             doneTrunkLiftButton.enabled = false
+            doneTrunkLiftButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             
@@ -140,9 +148,13 @@ class FlexibilityUITableViewController: UITableViewController {
             
             let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
             let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(FlexibilityUITableViewController.cancelArmShoulder))
+            cancelButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             
             toolBar.setItems([cancelButton, spaceButton, doneArmShoulderButton], animated: false)
             doneArmShoulderButton.enabled = false
+            doneArmShoulderButton.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
             toolBar.userInteractionEnabled = true
             
             
@@ -179,6 +191,8 @@ class FlexibilityUITableViewController: UITableViewController {
         
         txtSitReach.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+       
         let centimeters = Int(txtSitReach.text!)
         
         WebApiConnector.Post("SitAndReachApi", data: ["sitAndReach":centimeters!]) {
@@ -196,7 +210,11 @@ class FlexibilityUITableViewController: UITableViewController {
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -217,6 +235,8 @@ class FlexibilityUITableViewController: UITableViewController {
         
         txtTrunkLift.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let inches = Int(txtTrunkLift.text!)
         
         WebApiConnector.Post("TrunkLiftApi", data: ["trunkLift":inches!]) {
@@ -234,7 +254,11 @@ class FlexibilityUITableViewController: UITableViewController {
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -254,6 +278,8 @@ class FlexibilityUITableViewController: UITableViewController {
         
         txtArmShoulder.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let inches = Int(txtArmShoulder.text!)
         
         WebApiConnector.Post("ArmAndShoulderApi", data: ["armAndShoulder":inches!]) {
@@ -271,7 +297,11 @@ class FlexibilityUITableViewController: UITableViewController {
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -298,12 +328,17 @@ class FlexibilityUITableViewController: UITableViewController {
         var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+
         switch segueID {
             
         case "showSitReach":
             
             _ = WebApiConnector.Get("SitAndReachApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("sitAndReach", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -314,12 +349,20 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) cm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "SitAndReachApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showTrunkLift":
             _ = WebApiConnector.Get("TrunkLiftApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("trunkLift", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -330,12 +373,20 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "TrunkLiftApi"
-                tableVC.connectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showArmShoulder":
             _ = WebApiConnector.Get("ArmAndShoulderApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("armAndShoulder", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -346,7 +397,12 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "ArmAndShoulderApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+
+                        tableVC.act.stopActivityIndicator()
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         default:
