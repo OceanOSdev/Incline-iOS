@@ -32,12 +32,6 @@ class WebApiConnector {
             }
         }
         
-        /*authContext?.acquireTokenSilentWithResource("https://graph.windows.net", clientId: ApplicationData.clientID, redirectUri: ApplicationData.redirectURI) {
-            (result: ADAuthenticationResult!) -> Void in
-            if (result.accessToken != nil) {
-                ApplicationData.graphToken = result.accessToken
-            }
-        }*/
 
     }
 
@@ -75,10 +69,10 @@ class WebApiConnector {
     static func Get(apiUrl:String, completion:(json: [[String:AnyObject]]?) -> Void) {
         let request : NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string:  ApplicationData.baseApiAddress + apiUrl)!)
 
-        var authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
+        let authHeader : String = "Bearer " + ApplicationData.userItem.accessToken
         request.addValue(authHeader, forHTTPHeaderField: "Authorization")
         let queue : NSOperationQueue = NSOperationQueue()
-        var ret : [[String:AnyObject]]?
+        //var ret : [[String:AnyObject]]?
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
             do {
 
