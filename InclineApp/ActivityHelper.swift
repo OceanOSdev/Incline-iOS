@@ -28,17 +28,21 @@ class ActivityHelper {
         
     }
     
+    init() {
+        self.parentView = nil
+    }
+    
     func initActivity() {
         
         
-        container.frame = parentView!.view.frame
-        container.center = parentView!.view.center
-        container.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.8)
+        container.frame = parentView!.parentViewController!.view.frame
+        container.center = parentView!.parentViewController!.view.center
+        container.backgroundColor = UIColor.clearColor()
         
         //UIColorFromHex(0xffffff, alpha: 0.3)
         
         loadingView.frame = CGRectMake(0, 0, 80, 80)
-        loadingView.center = parentView!.view.center
+        loadingView.center = parentView!.parentViewController!.view.center
         loadingView.backgroundColor = UIColor.whiteColor()//.colorWithAlphaComponent(0.7)
         loadingView.clipsToBounds = true
         loadingView.layer.cornerRadius = 10
@@ -52,7 +56,7 @@ class ActivityHelper {
         
         loadingView.addSubview(activityView)
         container.addSubview(loadingView)
-        parentView!.view.addSubview(container)
+        parentView!.parentViewController!.view.addSubview(container)
         activityView.startAnimating()
         
     }

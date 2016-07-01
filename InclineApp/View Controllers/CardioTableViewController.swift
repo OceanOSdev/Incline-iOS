@@ -299,6 +299,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtMileRun.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+        
         let time = "00:\(mileRunItem1.componentsSeparatedByString(" ")[0]):\(mileRunItem2.componentsSeparatedByString(" ")[0]).0000000"
         
         //(hours):(minutes):(seconds).(subseconds)
@@ -318,6 +320,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 }
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                
+                act.stopActivityIndicator()
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
@@ -343,6 +347,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtHalfMileRun.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let minutes = Int(halfmileRunItem1.componentsSeparatedByString(" ")[0])!
         let seconds = Int(halfmileRunItem2.componentsSeparatedByString(" ")[0])!
         
@@ -364,6 +370,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -386,6 +394,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtPacer.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let laps = Int(txtPacer.text!)
         
         WebApiConnector.Post("PacerApi", data: ["pacer":laps!]) {
@@ -404,6 +414,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -425,6 +437,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtStepTest.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let steps = Int(txtStepTest.text!)
         
         WebApiConnector.Post("StepTestApi", data: ["stepTestSteps":steps!]) {
@@ -443,6 +457,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -462,6 +478,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         txtHeartStepTest.resignFirstResponder()
         
+        let act = ActivityHelper(parentView: self)
+
         let bpm = Int(txtHeartStepTest.text!)
         
         WebApiConnector.Post("StepTestApi", data: ["stepTestHeartRate":bpm!]) {
@@ -480,6 +498,8 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
                 
+                act.stopActivityIndicator()
+
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
@@ -552,12 +572,17 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         var IDArray: [AnyObject]? = []
         var arrayToPass: [String] = []
         var JSONDictToArrayResult: [AnyObject]? = []
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+
         switch segueID {
             
         case "showMileRun":
             // Creates the request
             _ = WebApiConnector.Get("MileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("mileTime", dict: json!)
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
@@ -568,12 +593,18 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "MileTimeApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showHalfMileRun":
             _ = WebApiConnector.Get("HalfMileTimeApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("halfMileTime", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -584,13 +615,18 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "HalfMileTimeApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showPacer":
             
             _ = WebApiConnector.Get("PacerApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("pacer", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -601,12 +637,17 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) laps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "PacerApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showStepTest":
             _ = WebApiConnector.Get("StepTestApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestSteps", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -617,12 +658,17 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) steps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         case "showHeartStepTest":
             _ = WebApiConnector.Get("StepTestApi") {
                 (json: [[String:AnyObject]]?) -> Void in
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+
                 JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestHeartRate", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
@@ -633,7 +679,10 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
-                tableVC.connectionView.reloadData()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        tableVC.connectionView.reloadData()
+                    }
+                }
             }
             
         default:

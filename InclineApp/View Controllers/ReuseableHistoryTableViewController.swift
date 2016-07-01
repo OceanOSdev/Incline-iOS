@@ -17,22 +17,18 @@ class ReuseableHistoryTableViewController: UITableViewController {
     var dateValuesDest: [String] = []
     var idValuesDest: [Int] = []
     var apiURL : String = ""
-    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    var act: ActivityHelper = ActivityHelper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityView.color = UIColor.darkGrayColor()
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        activityView.center = self.view.center
+        super.viewWillAppear(animated)
         
-        activityView.startAnimating()
+         act = ActivityHelper(parentView: self)
         
-        activityView.hidesWhenStopped = true
-        
-        self.view.addSubview(activityView)
     }
 
     override func didReceiveMemoryWarning() {
