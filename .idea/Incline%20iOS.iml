@@ -10,13 +10,124 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/InclineAppUITests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/InclineAppUITests/InclineApp_2ndIteration_UITests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Incline.entitlements" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ChartDefaults.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/WebApiConnector.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ReportsTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ActivityHelper.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/InclineApp_2ndIteration_Tests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartCoordsSpace.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueFloatScreenLoc.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueString.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValue.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueInt.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueDoubleScreenLoc.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueDate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueDouble.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/AxisValues/ChartAxisValueFloat.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Utils/Trendlines/TrendlineGenerator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Drawers/ChartContextDrawer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Drawers/ChartLabelDrawer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Drawers/ChartLineDrawer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Drawers/ChartDrawerFunctions.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisYHighLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisYLowLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisYLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisXLowLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisModel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisValuesGenerator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisXHighLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisXLayerDefault.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Axis/ChartAxisLabel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartPoint/ChartPoint.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartPoint/ChartPointBubble.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartPoint/ChartPointCandleStick.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartViewsConflictSolver.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointViewBarGreyOut.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointViewBar.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/CubicLinePathGenerator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/HandlingView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/StraightLinePathGenerator.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartLinesView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/InfoBubble.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartCandleStickView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartAreasView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/HandlingLabel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointEllipseView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointTextCircleView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointViewBarStacked.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Views/ChartPointTargetingView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Supporting Files/SwiftCharts.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Supporting Files/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Convenience/ChartConfig.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Convenience/LineChart.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Convenience/BarsChart.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartUtils.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/ChartLineModel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartDividersLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartCandleStickLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartLayerBase.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartShowCoordsLinesLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsBubbleLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsLineLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartCoordsSpaceLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsScatterLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsSingleViewLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartGroupedBarsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsTrackerLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsAreaLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartStackedBarsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartBarsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartGuideLinesLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsCandleStickViewsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsViewsLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Layers/ChartPointsLineTrackerLayer.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SwiftCharts/Chart.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Incline-Bridging-Header.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4.xcconfig" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4-prefix.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-dummy.m" isTestSource="false" />
@@ -24,6 +135,12 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-InclineTests/Pods-InclineTests-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking-iOS8.4/AFNetworking-iOS8.4-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS9.3/ADALiOS-iOS9.3.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS8.4/ADALiOS-iOS8.4.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS8.4/ADALiOS-iOS8.4-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ADALiOS-iOS8.4/ADALiOS-iOS8.4-dummy.m" isTestSource="false" />
@@ -151,50 +268,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/NSString+ADHelperMethods.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationResult+Internal.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/ADALiOS/ADALiOS/ADALiOS/ADAuthenticationViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/WebApiConnector.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/JSONParser.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ApplicationData.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/ReuseableHistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/AccountTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/SettingsTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/FlexibilityUITableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/EntryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/HistoryTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/View Controllers/CardioTableViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineApp/ActivityHelper.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Incline.entitlements" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_playlist_add_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_timeline_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_favorite_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_account_circle_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_settings_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_bike_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_fitness_center_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_stars_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_yogaman_36pt@2x.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_directions_run_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/System Icons (Reference)/ic_accessibility_36pt.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/InclineAppTests/InclineApp_2ndIteration_Tests.swift" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
