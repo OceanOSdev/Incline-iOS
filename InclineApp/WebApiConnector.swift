@@ -91,8 +91,7 @@ class WebApiConnector {
 
     }
     
-    static func Delete(apiUrl:String, data:AnyObject?, completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void)
-    {
+    static func Delete(apiUrl:String, data:AnyObject?, completion: (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void){
         let manager = AFHTTPSessionManager()
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer = AFJSONRequestSerializer()

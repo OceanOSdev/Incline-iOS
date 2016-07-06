@@ -501,7 +501,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
 
         let bpm = Int(txtHeartStepTest.text!)
         
-        WebApiConnector.Post("StepTestApi", data: ["stepTestHeartRate":bpm!]) {
+        WebApiConnector.Post("HeartRateApi", data: ["heartRate":bpm!]) {
             (dataTask: NSURLSessionDataTask, httpResponse: AnyObject?) -> Void in
             let urlResponse = dataTask.response as? NSHTTPURLResponse
             
@@ -689,11 +689,11 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
             }
             
         case "showHeartStepTest":
-            _ = WebApiConnector.Get("StepTestApi") {
+            _ = WebApiConnector.Get("HeartRateApi") {
                 (json: [[String:AnyObject]]?) -> Void in
                 dispatch_async(dispatch_get_global_queue(priority, 0)) {
 
-                JSONDictToArrayResult = JSONParser.DictionaryToArray("stepTestHeartRate", dict: json!)
+                JSONDictToArrayResult = JSONParser.DictionaryToArray("heartRate", dict: json!)
                 TimeArray = JSONParser.DictionaryToArray("logged", dict: json!)
                 IDArray = JSONParser.DictionaryToArray("id", dict: json!)
                 TimeToPass = JSONParser.getTimes(TimeArray)
@@ -702,7 +702,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
-                tableVC.apiURL = "StepTestApi"
+                tableVC.apiURL = "HeartRateApi"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.connectionView.reloadData()
