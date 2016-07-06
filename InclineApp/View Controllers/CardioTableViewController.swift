@@ -585,7 +585,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        let tableVC = navVC.viewControllers.first as! HistoryDataViewController
         var TimeToPass: [String] = []
         var IDToPass: [Int] = []
         var TimeArray: [AnyObject]? = []
@@ -613,9 +613,14 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.dateValuesDest = TimeToPass
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "MileTimeApi"
+                    let thing = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]})
+                    let another = thing.map({Double($0[0])! + (Double($0[1])! / 60.0)})
+
+                tableVC.rawData = another
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -636,9 +641,13 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]}).map({"\($0[0]) min \($0[1]) sec"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "HalfMileTimeApi"
+                    let thing = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]})
+                    let another = thing.map({Double($0[0])! + (Double($0[1])! / 60.0)})
+                tableVC.rawData = another
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -659,9 +668,11 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) laps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "PacerApi"
+                tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -681,9 +692,11 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) steps"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
+                tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -703,9 +716,11 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) bpm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
+                    tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }

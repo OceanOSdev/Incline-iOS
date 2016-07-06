@@ -111,6 +111,7 @@
 		97EC1FBE1D263BB90035FB6F /* InfoBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC1F781D263BB90035FB6F /* InfoBubble.swift */; };
 		97EC1FBF1D263BB90035FB6F /* StraightLinePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC1F791D263BB90035FB6F /* StraightLinePathGenerator.swift */; };
 		97EC1FC11D2644590035FB6F /* ChartDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC1FC01D2644590035FB6F /* ChartDefaults.swift */; };
+		97EC1FC31D2C72E80035FB6F /* HistoryDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC1FC21D2C72E80035FB6F /* HistoryDataViewController.swift */; };
 		9EE9D8B37CAF0C8CC53689A9 /* libPods-Incline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 175AB02FDBD436D300BC314C /* libPods-Incline.a */; };
 		CFC1511113A72FCC5F4B5DB7 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */; };
 		CFC151F6DEEB88BF53689839 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC152FA8741406D03226E17 /* ApplicationData.swift */; };
@@ -256,6 +257,7 @@
 		97EC1F781D263BB90035FB6F /* InfoBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoBubble.swift; sourceTree = "<group>"; };
 		97EC1F791D263BB90035FB6F /* StraightLinePathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StraightLinePathGenerator.swift; sourceTree = "<group>"; };
 		97EC1FC01D2644590035FB6F /* ChartDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDefaults.swift; sourceTree = "<group>"; };
+		97EC1FC21D2C72E80035FB6F /* HistoryDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDataViewController.swift; sourceTree = "<group>"; };
 		97F6EE151D165A9900F1BAE2 /* Incline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Incline-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1709AEC99C3E5EBA8D05282 /* Pods-Incline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.release.xcconfig"; sourceTree = "<group>"; };
 		B547DD499DD365C80E784BB7 /* Pods-Incline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Incline/Pods-Incline.debug.xcconfig"; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */,
 				7082265D1D1B6C3400AE7E5A /* FlexibilityUITableViewController.swift */,
 				701B02BA1D1DB26E00BE9A51 /* StrengthAndEnduranceTableViewController.swift */,
+				97EC1FC21D2C72E80035FB6F /* HistoryDataViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				97EC1FAA1D263BB90035FB6F /* ChartPointsScatterLayer.swift in Sources */,
 				97EC1FAB1D263BB90035FB6F /* ChartPointsSingleViewLayer.swift in Sources */,
 				97EC1F7B1D263BB90035FB6F /* ChartAxisLayer.swift in Sources */,
+				97EC1FC31D2C72E80035FB6F /* HistoryDataViewController.swift in Sources */,
 				CFC15E43A0D6CAD6A6E4E690 /* WebApiConnector.swift in Sources */,
 				97EC1FA31D263BB90035FB6F /* ChartLayerBase.swift in Sources */,
 				97EC1F9B1D263BB90035FB6F /* ChartLineDrawer.swift in Sources */,
