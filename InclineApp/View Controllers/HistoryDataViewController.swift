@@ -94,7 +94,7 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     
     private func generateChartData() -> [(Double, Double)] {
         // It would be redundant to check if the id array is larger than 0 and the data array since they are both pulled from the same json thing.
-        if (idValuesDest.count > 0) {
+        if (idValuesDest.count > 1) {
             var ids: [Double] = []
             
             for i in 1...(idValuesDest.count) {
@@ -106,6 +106,13 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else
         {
+            var alertController = UIAlertController(title: "Info", message: "You can't see a graph until you have at least two entries", preferredStyle: UIAlertControllerStyle.Alert)
+        
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+        
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
             return [(0,0)] // plot nothing
         }
     }

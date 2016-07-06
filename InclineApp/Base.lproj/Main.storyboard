@@ -24,7 +24,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="qEX-Xq-DJw" kind="relationship" relationship="viewControllers" id="vgk-lG-MRo"/>
-                        <segue destination="aPw-61-hbF" kind="relationship" relationship="viewControllers" id="zD6-HH-O5b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -175,48 +174,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tC-mF-Aqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1548" y="0.0"/>
-        </scene>
-        <!--Reports-->
-        <scene sceneID="iK6-MO-dwd">
-            <objects>
-                <tableViewController title="Reports" id="IAH-Oq-syt" customClass="ReportsTableViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tgu-nQ-x2R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YJu-Gb-CfU">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YJu-Gb-CfU" id="UfN-KO-raz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="IAH-Oq-syt" id="wev-1h-1CO"/>
-                            <outlet property="delegate" destination="IAH-Oq-syt" id="e2t-nP-iqx"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Reports" id="Y6f-VC-2nR">
-                        <barButtonItem key="backBarButtonItem" title=" " id="3w9-hA-xgK"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_account_circle_36pt.png" id="ZbP-zg-uLH">
-                            <connections>
-                                <segue destination="Knt-w3-xID" kind="presentation" identifier="showAccount" id="9Qy-qW-M55"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_settings_36pt.png" id="j6v-o9-SqG">
-                            <connections>
-                                <segue destination="4bB-Fo-0Jn" kind="presentation" identifier="showSettings" id="zQb-BK-fTR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Yb-0F-Fsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1564" y="733"/>
         </scene>
         <!--Account-->
         <scene sceneID="YIT-tS-ni0">
@@ -445,25 +402,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2t9-4A-gfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832" y="0.0"/>
-        </scene>
-        <!--Reports-->
-        <scene sceneID="XtM-er-SxA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPw-61-hbF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reports" image="ic_timeline_36pt.png" id="JxX-mt-vwH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GGa-Ae-Gxt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="IAH-Oq-syt" kind="relationship" relationship="rootViewController" id="8TU-Nx-gmv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QjI-9u-grt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="832" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1t-mS-YWB">
@@ -1871,10 +1809,10 @@
             </objects>
             <point key="canvasLocation" x="3110" y="0.0"/>
         </scene>
-        <!--History Data View Controller-->
+        <!--History-->
         <scene sceneID="5Jw-yN-7cU">
             <objects>
-                <viewController id="Xi7-Er-QGt" customClass="HistoryDataViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="History" id="Xi7-Er-QGt" customClass="HistoryDataViewController" customModule="Incline" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xsT-gL-GTe"/>
                         <viewControllerLayoutGuide type="bottom" id="4y7-Fo-yrn"/>
@@ -1922,7 +1860,19 @@
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjA-lG-jLG" customClass="ChartBaseView" customModule="Incline" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-9Z-nZH">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Wxq-9Z-nZH" firstAttribute="top" secondItem="tjA-lG-jLG" secondAttribute="top" id="Ihd-S9-2bj"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wxq-9Z-nZH" secondAttribute="bottomMargin" constant="270" id="OKh-ft-oLw"/>
+                                            <constraint firstItem="Wxq-9Z-nZH" firstAttribute="leading" secondItem="tjA-lG-jLG" secondAttribute="leading" id="vzc-4t-InS"/>
+                                            <constraint firstItem="Wxq-9Z-nZH" firstAttribute="centerX" secondItem="tjA-lG-jLG" secondAttribute="centerX" id="z84-FN-S6S"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -1935,7 +1885,7 @@
                             <constraint firstAttribute="trailing" secondItem="F9L-hK-dxR" secondAttribute="trailing" id="yge-5W-CPI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TxB-2h-ZBe">
+                    <navigationItem key="navigationItem" title="History" id="TxB-2h-ZBe">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="hNh-Ux-FbL">
                             <connections>
                                 <action selector="btnExit:" destination="Xi7-Er-QGt" id="PgZ-bQ-Mf8"/>
@@ -1959,12 +1909,9 @@
         <image name="ic_fitness_center_36pt.png" width="36" height="36"/>
         <image name="ic_playlist_add_36pt.png" width="36" height="36"/>
         <image name="ic_settings_36pt.png" width="36" height="36"/>
-        <image name="ic_timeline_36pt.png" width="36" height="36"/>
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Qy-qW-M55"/>
-        <segue reference="zQb-BK-fTR"/>
         <segue reference="ri5-a3-LvO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
