@@ -662,7 +662,11 @@
 				TargetAttributes = {
 					70F446751CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
+
 						DevelopmentTeam = 653PQSQX4V;
+
+						DevelopmentTeam = 94ZNX3C33N;
+
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -1082,7 +1086,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";
@@ -1102,7 +1106,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";

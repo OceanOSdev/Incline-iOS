@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Authentication View Controller-->
+        <!--Log In-->
         <scene sceneID="VnW-m2-oXs">
             <objects>
                 <viewController modalPresentationStyle="formSheet" id="leH-LM-mXg" customClass="ADAuthenticationViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="S0O-Kh-zdY"/>
+                    <navigationItem key="navigationItem" title="Log In" id="S0O-Kh-zdY"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="eov-Iv-rha" id="hZP-uO-KOc"/>
