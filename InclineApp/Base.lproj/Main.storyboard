@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qEX-Xq-DJw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.1058823529" green="0.59607843140000005" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="0.10588235294117647" green="0.59607843137254901" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBar>
-                    <connections>
-                        <segue destination="qEX-Xq-DJw" kind="relationship" relationship="viewControllers" id="vgk-lG-MRo"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
         <!--Entry-->
         <scene sceneID="0ON-vK-p7C">
             <objects>
@@ -384,11 +360,11 @@
             </objects>
             <point key="canvasLocation" x="2280" y="-675"/>
         </scene>
-        <!--Entry-->
+        <!--Navigation Controller-->
         <scene sceneID="gZS-vp-s0q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qEX-Xq-DJw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Entry" image="ic_playlist_add_36pt.png" id="GUt-f8-1gx"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="GUt-f8-1gx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yrv-vN-0HA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1824,12 +1800,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F9L-hK-dxR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Heb-bx-Aep">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Heb-bx-Aep">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="9JY-FQ-BwM" detailTextLabel="g3q-ll-jE0" style="IBUITableViewCellStyleValue1" id="F5p-gd-sXf">
-                                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F5p-gd-sXf" id="Ieh-er-IXH">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -1907,7 +1883,6 @@
         <image name="ic_account_circle_36pt.png" width="36" height="36"/>
         <image name="ic_directions_run_36pt.png" width="36" height="36"/>
         <image name="ic_fitness_center_36pt.png" width="36" height="36"/>
-        <image name="ic_playlist_add_36pt.png" width="36" height="36"/>
         <image name="ic_settings_36pt.png" width="36" height="36"/>
         <image name="ic_yogaman_36pt.png" width="36" height="36"/>
     </resources>
