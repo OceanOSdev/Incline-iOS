@@ -617,6 +617,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                     let another = thing.map({Double($0[0])! + (Double($0[1])! / 60.0)})
 
                 tableVC.rawData = another
+                    tableVC.yAxisLabel = "Mile Time (min)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
@@ -644,6 +645,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                     let thing = JSONDictToArrayResult!.map({[$0.componentsSeparatedByString(":")[1],$0.componentsSeparatedByString(":")[2]]})
                     let another = thing.map({Double($0[0])! + (Double($0[1])! / 60.0)})
                 tableVC.rawData = another
+                    tableVC.yAxisLabel = "Half-Mile Time (min)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
@@ -669,6 +671,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "PacerApi"
                 tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                    tableVC.yAxisLabel = "Pacer (laps)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
@@ -693,6 +696,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "StepTestApi"
                 tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                    tableVC.yAxisLabel = "Step Test (reps)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
@@ -718,7 +722,7 @@ class CardioTableViewController: UITableViewController, UIPickerViewDelegate, UI
 
                 tableVC.apiURL = "StepTestApi"
                     tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
-
+                    tableVC.yAxisLabel = "Heart Rate (bpm)"
                 tableVC.apiURL = "HeartRateApi"
 
                     dispatch_async(dispatch_get_main_queue()) {

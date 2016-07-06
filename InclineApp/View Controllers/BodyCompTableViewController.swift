@@ -444,6 +444,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
                     tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
                     tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double}) // pass the data as a double for graphs
+                    tableVC.yAxisLabel = "Height (in)"
                     dispatch_async(dispatch_get_main_queue()) {
                         // update some UI
                         tableVC.act.stopActivityIndicator()
@@ -472,6 +473,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.apiURL = "WeightApi"
                     
                     tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                    tableVC.yAxisLabel = "Weight (lbs)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
@@ -496,6 +498,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.totalValuesDest = arrayToPass
                     tableVC.apiURL = "PercentBodyFatApi"
                     tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                    tableVC.yAxisLabel = "Body Fat (%)"
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
                         tableVC.tableView.reloadData()
