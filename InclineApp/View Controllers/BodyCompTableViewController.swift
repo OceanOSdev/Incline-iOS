@@ -414,7 +414,7 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        let tableVC = navVC.viewControllers.first as! HistoryDataViewController
         
         var arrayToPass: [String] = []
         var TimeToPass: [String] = []
@@ -443,10 +443,12 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     arrayToPass = JSONDictToArrayResult!.map({$0 as! Int}).map({"\(($0 / 12)) ft \(($0 % 12)) in"}) // cast the results to ints and then cast that those to strings containing height in feet and inches.
                     tableVC.totalValuesDest = arrayToPass  // send the array of strings over to the reusable table history view controller
                     tableVC.apiURL = "HeightApi" // send the api url so that the Reusable History Table Controller knows what to delete if it needs to
+                    tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double}) // pass the data as a double for graphs
                     dispatch_async(dispatch_get_main_queue()) {
                         // update some UI
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()  // reload the table data when the web request completes.
+                        tableVC.tableView.reloadData()  // reload the table data when the web request completes.
+                        tableVC.initChart() // initialize chart
                     }
                 }
             }
@@ -469,9 +471,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     tableVC.totalValuesDest = arrayToPass
                     tableVC.apiURL = "WeightApi"
                     
+                    tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -491,9 +495,11 @@ class BodyCompTableViewController: UITableViewController, UIPickerViewDataSource
                     arrayToPass = JSONDictToArrayResult!.map({"\($0) %"})
                     tableVC.totalValuesDest = arrayToPass
                     tableVC.apiURL = "PercentBodyFatApi"
+                    tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
                     dispatch_async(dispatch_get_main_queue()) {
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
