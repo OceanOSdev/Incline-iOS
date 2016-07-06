@@ -27,6 +27,7 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     // Terrible Variables
     var layoutCounter: Int = 0
     var rawData: [Double] = []
+    var yAxisLabel: String = ""
     // MARK: - View Methods
     
     override func viewDidLoad() {
@@ -64,8 +65,8 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
         let xValues = chartPoints.map{$0.x}
         let yValues = ChartAxisValuesGenerator.generateYAxisValuesWithChartPoints(chartPoints, minSegmentCount: 10, maxSegmentCount: 20, multiple: 2, axisValueGenerator: {ChartAxisValueDouble($0, labelSettings: labelSettings)}, addPaddingSegmentIfEdge: false)
         
-        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
-        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings.defaultVertical()))
+        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Entry #", settings: labelSettings))
+        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: yAxisLabel, settings: labelSettings.defaultVertical()))
         let chartFrame = ChartDefaults.chartFrame(chartView.bounds)
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: ChartDefaults.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
@@ -94,7 +95,12 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     private func generateChartData() -> [(Double, Double)] {
         // It would be redundant to check if the id array is larger than 0 and the data array since they are both pulled from the same json thing.
         if (idValuesDest.count > 0) {
-            let ids = idValuesDest.reverse().map({Double($0)})
+            var ids: [Double] = []
+            
+            for i in 1...(idValuesDest.count) {
+                ids.append(Double(i))
+            }
+            
             let data = rawData.reverse()
             return Array(Zip2Sequence(ids, data))
         }

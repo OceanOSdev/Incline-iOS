@@ -350,6 +350,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "SitAndReachApi"
                 tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Sit & Reach (cm)"
                 dispatch_async(dispatch_get_main_queue()) {
 
                         tableVC.act.stopActivityIndicator()
@@ -376,6 +377,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "TrunkLiftApi"
                 tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Trunk Lift (in)"
                 dispatch_async(dispatch_get_main_queue()) {
                     
                         tableVC.act.stopActivityIndicator()
@@ -402,6 +404,7 @@ class FlexibilityUITableViewController: UITableViewController {
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "ArmAndShoulderApi"
                 tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Arm & Shoulder (in)"
                     dispatch_async(dispatch_get_main_queue()) {
 
                         tableVC.act.stopActivityIndicator()
