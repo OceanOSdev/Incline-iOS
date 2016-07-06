@@ -27,6 +27,7 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     // Terrible Variables
     var layoutCounter: Int = 0
     var rawData: [Double] = []
+    var yAxisLabel: String = ""
     // MARK: - View Methods
     
     override func viewDidLoad() {
@@ -36,12 +37,6 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        /*if layoutCounter == 1 && asyncFinished{
-            initChart()
-        }
-        
-        layoutCounter += 1*/
-        var thing = [(0, 0), (4, 4), (8, 11), (9, 2), (11, 10), (12, 3), (15, 18), (18, 10), (20, 15)]
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,16 +57,21 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
         let chartPoints = data.map{ChartPoint(x: ChartAxisValueDouble($0.0, labelSettings: labelSettings), y: ChartAxisValueDouble($0.1))}
         
         let xValues = chartPoints.map{$0.x}
-        let yValues = ChartAxisValuesGenerator.generateYAxisValuesWithChartPoints(chartPoints, minSegmentCount: 10, maxSegmentCount: 20, multiple: 2, axisValueGenerator: {ChartAxisValueDouble($0, labelSettings: labelSettings)}, addPaddingSegmentIfEdge: false)
+        let yValues = ChartAxisValuesGenerator.generateYAxisValuesWithChartPoints(chartPoints, minSegmentCount: 10, maxSegmentCount: 20, multiple: 2, axisValueGenerator: {ChartAxisValueDouble($0, labelSettings: labelSettings)}, addPaddingSegmentIfEdge: true)
         
-        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
-        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings.defaultVertical()))
+        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Entry #", settings: labelSettings))
+        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: yAxisLabel, settings: labelSettings.defaultVertical()))
         let chartFrame = ChartDefaults.chartFrame(chartView.bounds)
         let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: ChartDefaults.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
         let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
         
-        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: lineColor, lineWidth: 2, animDuration: 1, animDelay: 0)
-        let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel], pathGenerator: CubicLinePathGenerator(tension1: 0.3, tension2: 0.3))
+        //let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: lineColor, lineWidth: 2, animDuration: 1, animDelay: 0)
+        //let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel], pathGenerator: CubicLinePathGenerator(tension1: 0.3, tension2: 0.3))
+        
+        let lineModel = ChartLineModel(chartPoints: chartPoints, lineColor: lineColor, animDuration: 1, animDelay: 0)
+        let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel])
+        let trackerLayerSettings = ChartPointsLineTrackerLayerSettings(thumbSize: 20, thumbCornerRadius: 10, thumbBorderWidth: 2, infoViewFont: ChartDefaults.fontWithSize(16), infoViewSize: CGSizeMake(160, 40), infoViewCornerRadius: 15)
+        let chartPointsTrackerLayer = ChartPointsLineTrackerLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, chartPoints: chartPoints, lineColor: UIColor.blackColor(), animDuration: 1, animDelay: 2, settings: trackerLayerSettings)
         
         let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: ChartDefaults.guidelinesWidth)
         let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
@@ -82,9 +82,11 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
                 xAxis,
                 yAxis,
                 guidelinesLayer,
-                chartPointsLineLayer
+                chartPointsLineLayer,
+                chartPointsTrackerLayer
             ]
         )
+        
         chart.view.backgroundColor = UIColor.init(colorLiteralRed: 247/255.0, green: 247/255.0, blue: 247/255.0, alpha: 247/255.0)
         chartView.addSubview(chart.view)
         self.chart = chart
@@ -93,13 +95,25 @@ class HistoryDataViewController: UIViewController, UITableViewDelegate, UITableV
     
     private func generateChartData() -> [(Double, Double)] {
         // It would be redundant to check if the id array is larger than 0 and the data array since they are both pulled from the same json thing.
-        if (idValuesDest.count > 0) {
-            let ids = idValuesDest.reverse().map({Double($0)})
+        if (idValuesDest.count > 1) {
+            var ids: [Double] = []
+            
+            for i in 1...(idValuesDest.count) {
+                ids.append(Double(i))
+            }
+            
             let data = rawData.reverse()
             return Array(Zip2Sequence(ids, data))
         }
         else
         {
+            let alertController = UIAlertController(title: "Info", message: "You can't see a graph until you have at least two entries", preferredStyle: UIAlertControllerStyle.Alert)
+        
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            alertController.view.tintColor = UIColor.init(red: 27/255.0, green: 152/255.0, blue: 224/255.0, alpha: 1.0)
+        
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
             return [(0,0)] // plot nothing
         }
     }

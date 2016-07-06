@@ -116,7 +116,6 @@
 		CFC1511113A72FCC5F4B5DB7 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */; };
 		CFC151F6DEEB88BF53689839 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC152FA8741406D03226E17 /* ApplicationData.swift */; };
 		CFC1535817107FFCD84748A9 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15BECDA6CEB61958455AE /* AccountTableViewController.swift */; };
-		CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */; };
 		CFC15582D4124390F692A61F /* BodyCompTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */; };
 		CFC1575DC610A8C543573B72 /* CardioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */; };
 		CFC1582701CD20C98A41F217 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC155FE857A413DFA00D8C3 /* JSONParser.swift */; };
@@ -265,7 +264,6 @@
 		CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CFC152E35D12825BBABE8DAD /* WebApiConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApiConnector.swift; sourceTree = "<group>"; };
 		CFC152FA8741406D03226E17 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
-		CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseableHistoryTableViewController.swift; sourceTree = "<group>"; };
 		CFC155FE857A413DFA00D8C3 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		CFC157BDD4C3DD7E027633DC /* BodyCompTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCompTableViewController.swift; sourceTree = "<group>"; };
 		CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -575,7 +573,6 @@
 			children = (
 				97EC1F241D2638F50035FB6F /* ReportsTableViewController.swift */,
 				CFC15C81B40B43A49886ED13 /* EntryTableViewController.swift */,
-				CFC1539BC8B8BC390970EA8F /* ReuseableHistoryTableViewController.swift */,
 				CFC151BA509E79EF3FBA71F3 /* SettingsTableViewController.swift */,
 				CFC1582CCD8EB4B1A8470B0F /* HistoryTableViewController.swift */,
 				CFC15A01E0A107C259F82A28 /* CardioTableViewController.swift */,
@@ -662,7 +659,7 @@
 				TargetAttributes = {
 					70F446751CFE891B00203756 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 653PQSQX4V;
+						DevelopmentTeam = 94ZNX3C33N;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -860,7 +857,6 @@
 				97EC1F7C1D263BB90035FB6F /* ChartAxisLayerDefault.swift in Sources */,
 				97EC1FA91D263BB90035FB6F /* ChartPointsLineTrackerLayer.swift in Sources */,
 				97EC1F831D263BB90035FB6F /* ChartAxisYLayerDefault.swift in Sources */,
-				CFC1552E141CF9B0BEFCDDA6 /* ReuseableHistoryTableViewController.swift in Sources */,
 				97EC1F7D1D263BB90035FB6F /* ChartAxisModel.swift in Sources */,
 				97EC1FB31D263BB90035FB6F /* ChartCandleStickView.swift in Sources */,
 				97EC1F951D263BB90035FB6F /* BarsChart.swift in Sources */,
@@ -1082,7 +1078,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";
@@ -1102,7 +1098,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/InclineApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "incline.InclineApp-2ndIteration-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InclineApp-2ndIteration-";
 				PRODUCT_NAME = Incline;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Incline-Bridging-Header.h";
