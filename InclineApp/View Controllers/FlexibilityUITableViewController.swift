@@ -321,7 +321,7 @@ class FlexibilityUITableViewController: UITableViewController {
         
         let navVC = segue.destinationViewController as! UINavigationController
         
-        let tableVC = navVC.viewControllers.first as! ReuseableHistoryTableViewController
+        let tableVC = navVC.viewControllers.first as! HistoryDataViewController
         var TimeToPass: [String] = []
         var IDToPass: [Int] = []
         var TimeArray: [AnyObject]? = []
@@ -349,10 +349,13 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) cm"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "SitAndReachApi"
+                tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Sit & Reach (cm)"
                 dispatch_async(dispatch_get_main_queue()) {
 
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -373,10 +376,13 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "TrunkLiftApi"
+                tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Trunk Lift (in)"
                 dispatch_async(dispatch_get_main_queue()) {
                     
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }
@@ -397,10 +403,13 @@ class FlexibilityUITableViewController: UITableViewController {
                 arrayToPass = JSONDictToArrayResult!.map({"\($0) in"})
                 tableVC.totalValuesDest = arrayToPass
                 tableVC.apiURL = "ArmAndShoulderApi"
+                tableVC.rawData = JSONDictToArrayResult!.map({$0 as! Double})
+                tableVC.yAxisLabel = "Arm & Shoulder (in)"
                     dispatch_async(dispatch_get_main_queue()) {
 
                         tableVC.act.stopActivityIndicator()
-                        tableVC.connectionView.reloadData()
+                        tableVC.tableView.reloadData()
+                        tableVC.initChart()
                     }
                 }
             }

@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="229" y="247"/>
         </scene>
-        <!--Authentication View Controller-->
+        <!--Log In-->
         <scene sceneID="0yt-pg-Fvf">
             <objects>
                 <viewController id="GcB-iz-KCM" customClass="ADAuthenticationViewController" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rFS-lD-Be8"/>
+                    <navigationItem key="navigationItem" title="Log In" id="rFS-lD-Be8"/>
                     <connections>
                         <outlet property="activityIndicator" destination="k7f-19-G6V" id="zvx-g1-Oin"/>
                         <outlet property="webView" destination="aQj-zZ-Grp" id="7Vs-Hq-TpS"/>

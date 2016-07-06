@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a03e61e2-8ef4-49a7-a6c2-8a6df6607dde" name="Default" comment="" />
+    <list default="true" id="a03e61e2-8ef4-49a7-a6c2-8a6df6607dde" name="Default" comment="Added SwiftCharts to the project because I feel it will be easier to implement than Power BI.  Also, the target users (i.e. Students) are not going to need the data processing capabilities of Power BI, so I think it would be best to leave that to the web version (i.e. the version that the teachers are more likely going to use anyways)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InclineApp/ChartDefaults.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InclineApp/ReportsTableViewController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisLabel.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisModel.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisValuesGenerator.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisXHighLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisXLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisXLowLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisYHighLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisYLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisYLowLayerDefault.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValue.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueDate.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueDouble.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueDoubleScreenLoc.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueFloat.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueFloatScreenLoc.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueInt.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/AxisValues/ChartAxisValueString.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Chart.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartCoordsSpace.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartLineModel.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartPoint/ChartPoint.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartPoint/ChartPointBubble.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartPoint/ChartPointCandleStick.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartUtils.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/ChartViewsConflictSolver.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Convenience/BarsChart.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Convenience/ChartConfig.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Convenience/LineChart.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Drawers/ChartContextDrawer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Drawers/ChartDrawerFunctions.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Drawers/ChartLabelDrawer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Drawers/ChartLineDrawer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartBarsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartCandleStickLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartCoordsSpaceLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartDividersLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartGroupedBarsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartGuideLinesLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartLayerBase.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsAreaLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsBubbleLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsCandleStickViewsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsLineLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsLineTrackerLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsScatterLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsSingleViewLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsTrackerLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartPointsViewsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartShowCoordsLinesLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Layers/ChartStackedBarsLayer.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Supporting Files/Info.plist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Supporting Files/SwiftCharts.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Utils/Trendlines/TrendlineGenerator.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartAreasView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartCandleStickView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartLinesView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointEllipseView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointTargetingView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointTextCircleView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointViewBar.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointViewBarGreyOut.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/ChartPointViewBarStacked.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/CubicLinePathGenerator.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/HandlingLabel.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/HandlingView.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/InfoBubble.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SwiftCharts/Views/StraightLinePathGenerator.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Incline%20iOS.iml" afterPath="$PROJECT_DIR$/.idea/Incline%20iOS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Incline.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Incline.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InclineApp/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/InclineApp/Base.lproj/Main.storyboard" />
+    </list>
     <ignored path="Incline%20iOS.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/InclineApp/WebApiConnector.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,18 +112,28 @@
       <file leaf-file-name="CardioTableViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/CardioTableViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="8580">
               <caret line="572" column="12" selection-start-line="572" selection-start-column="12" selection-end-line="572" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StrengthAndEnduranceTableViewController.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StrengthAndEnduranceTableViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3315">
-              <caret line="657" column="28" selection-start-line="657" selection-start-column="28" selection-end-line="657" selection-end-column="28" />
+            <state relative-caret-position="745">
+              <caret line="657" column="0" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChartAxisXLayerDefault.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisXLayerDefault.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -65,26 +153,8 @@
         <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5970">
-              <caret line="398" column="13" selection-start-line="398" selection-start-column="13" selection-end-line="398" selection-end-column="13" />
-              <folding>
-                <marker date="1466789476000" expanded="true" signature="288:14982" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="1143:1459" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="1520:1840" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="2858:3177" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="3223:3329" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="3446:5560" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="7267:8719" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="8787:8890" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="8944:10160" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="10222:10325" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="10385:11614" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="11678:11774" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="11899:11941" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="12040:12110" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="12272:12342" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="12445:12707" ph="{...}" />
-                <marker date="1466789476000" expanded="true" signature="12798:14975" ph="{...}" />
-              </folding>
+              <caret line="398" column="5" selection-start-line="398" selection-start-column="5" selection-end-line="398" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,10 +185,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="23" />
+    <option name="x" value="-9" />
+    <option name="y" value="27" />
     <option name="width" value="1916" />
-    <option name="height" value="1177" />
+    <option name="height" value="977" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -145,6 +215,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="Cidr.FilesView">
         <subPane>
           <PATH>
@@ -153,74 +226,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InclineApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Incline%20iOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InclineApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane />
       </pane>
     </panes>
   </component>
@@ -228,7 +234,7 @@
     <property name="settings.editor.selected.configurable" value="CocoaPods" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.InclineApp(2ndIteration)">
+  <component name="RunManager" selected="Application.Pods-Incline">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Incline" TARGET_NAME="Incline" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Incline" RUN_TARGET_NAME="Incline" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -263,27 +269,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="InclineApp(2ndIteration)" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Incline" TARGET_NAME="Incline" CONFIG_NAME="Debug" SCHEME_NAME="InclineApp(2ndIteration)" RUN_TARGET_PROJECT_NAME="Incline" RUN_TARGET_NAME="Incline" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="ADALiOS" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="ADALiOS" CONFIG_NAME="Debug" SCHEME_NAME="ADALiOS" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
-    <configuration default="false" name="AFNetworking" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="AFNetworking" CONFIG_NAME="Debug" SCHEME_NAME="AFNetworking" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-      <envs />
-      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
-        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
-      </EXTENSION>
-      <method />
-    </configuration>
     <configuration default="false" name="Pods-Incline" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="Pods-Incline" CONFIG_NAME="Debug" SCHEME_NAME="Pods-Incline" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -298,12 +283,49 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.InclineApp(2ndIteration)" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ADALiOS" />
-      <item index="2" class="java.lang.String" itemvalue="Application.AFNetworking" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Pods-Incline" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Pods-InclineTests" />
+    <configuration default="false" name="Incline" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Incline" TARGET_NAME="Incline" CONFIG_NAME="Debug" SCHEME_NAME="Incline" RUN_TARGET_PROJECT_NAME="Incline" RUN_TARGET_NAME="Incline" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="ADALiOS-iOS8.4" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="ADALiOS-iOS8.4" CONFIG_NAME="Debug" SCHEME_NAME="ADALiOS-iOS8.4" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="ADALiOS-iOS9.3" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="ADALiOS-iOS9.3" CONFIG_NAME="Debug" SCHEME_NAME="ADALiOS-iOS9.3" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="AFNetworking-iOS8.4" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="AFNetworking-iOS8.4" CONFIG_NAME="Debug" SCHEME_NAME="AFNetworking-iOS8.4" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="AFNetworking-iOS9.3" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="AFNetworking-iOS9.3" CONFIG_NAME="Debug" SCHEME_NAME="AFNetworking-iOS9.3" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.Pods-Incline" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pods-InclineTests" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Incline" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ADALiOS-iOS8.4" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ADALiOS-iOS9.3" />
+      <item index="5" class="java.lang.String" itemvalue="Application.AFNetworking-iOS8.4" />
+      <item index="6" class="java.lang.String" itemvalue="Application.AFNetworking-iOS9.3" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -376,32 +398,40 @@
       <option name="project" value="LOCAL" />
       <updated>1466797874061</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="bleh">
+      <created>1467350727404</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1467350727404</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1916" height="1177" extended-state="0" />
+    <frame x="-9" y="27" width="1916" height="977" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18267223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18463181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -424,13 +454,55 @@
     <MESSAGE value="fixed bug in cardio view" />
     <MESSAGE value="added fix for possible programe misuse" />
     <MESSAGE value="added the muscular enduracne functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the muscular enduracne functionality" />
+    <MESSAGE value="bleh" />
+    <MESSAGE value="Added SwiftCharts to the project because I feel it will be easier to implement than Power BI.  Also, the target users (i.e. Students) are not going to need the data processing capabilities of Power BI, so I think it would be best to leave that to the web version (i.e. the version that the teachers are more likely going to use anyways)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SwiftCharts to the project because I feel it will be easier to implement than Power BI.  Also, the target users (i.e. Students) are not going to need the data processing capabilities of Power BI, so I think it would be best to leave that to the web version (i.e. the version that the teachers are more likely going to use anyways)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/InclineApp/WebApiConnector.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/CardioTableViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8580">
+          <caret line="572" column="12" selection-start-line="572" selection-start-column="12" selection-end-line="572" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InclineApp/JSONParser.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5970">
+          <caret line="398" column="5" selection-start-line="398" selection-start-column="5" selection-end-line="398" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InclineApp/WebApiConnector.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -459,25 +531,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6045">
           <caret line="403" column="13" selection-start-line="403" selection-start-column="13" selection-end-line="403" selection-end-column="13" />
-          <folding>
-            <marker date="1466789476000" expanded="true" signature="288:14982" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1143:1459" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1520:1840" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="2858:3177" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3223:3329" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3446:5560" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="7267:8719" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8787:8890" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8944:10160" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10222:10325" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10385:11614" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11678:11774" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11899:11941" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12040:12110" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12272:12342" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12445:12707" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12798:14975" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -501,25 +555,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5550">
           <caret line="370" column="13" selection-start-line="370" selection-start-column="13" selection-end-line="370" selection-end-column="13" />
-          <folding>
-            <marker date="1466789476000" expanded="true" signature="288:14982" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1143:1459" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1520:1840" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="2858:3177" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3223:3329" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3446:5560" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="7267:8719" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8787:8890" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8944:10160" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10222:10325" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10385:11614" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11678:11774" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11899:11941" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12040:12110" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12272:12342" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12445:12707" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12798:14975" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -543,25 +579,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1466789476000" expanded="true" signature="288:14982" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1143:1459" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1520:1840" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="2858:3177" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3223:3329" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3446:5560" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="7267:8719" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8787:8890" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8944:10160" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10222:10325" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10385:11614" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11678:11774" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11899:11941" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12040:12110" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12272:12342" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12445:12707" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12798:14975" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -576,40 +594,22 @@
     <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/BodyCompTableViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5970">
-          <caret line="398" column="13" selection-start-line="398" selection-start-column="13" selection-end-line="398" selection-end-column="13" />
-          <folding>
-            <marker date="1466789476000" expanded="true" signature="288:14982" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1143:1459" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="1520:1840" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="2858:3177" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3223:3329" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="3446:5560" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="7267:8719" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8787:8890" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="8944:10160" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10222:10325" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="10385:11614" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11678:11774" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="11899:11941" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12040:12110" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12272:12342" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12445:12707" ph="{...}" />
-            <marker date="1466789476000" expanded="true" signature="12798:14975" ph="{...}" />
-          </folding>
+          <caret line="398" column="5" selection-start-line="398" selection-start-column="5" selection-end-line="398" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InclineApp/WebApiConnector.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/CardioTableViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="8580">
           <caret line="572" column="12" selection-start-line="572" selection-start-column="12" selection-end-line="572" selection-end-column="12" />
           <folding />
         </state>
@@ -617,8 +617,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/InclineApp/View Controllers/StrengthAndEnduranceTableViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="657" column="28" selection-start-line="657" selection-start-column="28" selection-end-line="657" selection-end-column="28" />
+        <state relative-caret-position="745">
+          <caret line="657" column="0" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwiftCharts/Axis/ChartAxisXLayerDefault.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding />
         </state>
       </provider>
